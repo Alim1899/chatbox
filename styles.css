@@ -1,10 +1,25 @@
+:root{
+    --viewWidth: 500px;
+}
+
 .box{
     display: block;
-    justify-content: s;
     margin-left:150px;
     margin-top: 50px;
-    width:500px;
+    width:var(--viewWidth);
     height:70vh;
+    border-radius: 50px;
+    background-color: #b02fe4;
+    display: none;
+}
+.chat{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin-left:150px;
+    margin-top: 50px;
+    width:var(--viewWidth);    height:70vh;
+    
     border-radius: 50px;
     background-color: #b02fe4;
 }
@@ -15,7 +30,7 @@
     align-items: center;
     height: 20%;
     color:rgb(243, 247, 247);
-    font-weight: 900;
+    font-size: 3rem;
     font-family:'Courier New', Courier, monospace
 }
 
@@ -25,10 +40,59 @@
     width:100%;
     height: 77%;
     border-radius: 50px;
-    background-color: #f6ccfa;
+    background-color: #f4ecf5;
     display: block;
-
+    max-height: 100%;
+    overflow-y:scroll;
 }
+.chatbox{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    width:100%;
+    height: 77%;
+    border-radius: 50px;
+    background-color: #f4ecf5;
+    max-height: 100%;
+    overflow-y:scroll;
+}
+.chatbox > input{
+    width:300px;
+    height: 50px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 40px;
+    font-size: large;
+}
+.chatbox > button{
+    margin-bottom: 45px;
+    font-size: 1.6rem;
+    border: none;
+}
+.chatbox > button:hover{
+    background-color: #b02fe4;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    border-radius: 20px;
+    width: 300px;
+    font-size: larger;
+    height: 50px;
+    background-color: #f4ecf5;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
 .contact{
     display: flex;
@@ -43,4 +107,12 @@
 display: flex;
 justify-content: center;
 align-items: center;
+}
+.endMsg{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    font-weight: 700;
+    color: #e43011;
 }

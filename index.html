@@ -2,19 +2,36 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>chatbox</title>
 </head>
 <body>
+    <!-- html for contact-list page -->
     <div class="box">
         <h1 class="heading">Contact List</h1>
+        <form id="form"> 
+            <input list="suggsId" type="search" class="search"  placeholder="🔎 Search Contact..." >
+            <datalist class="suggs" id="suggsId">
+            </datalist>
+          </form> 
         <div class="contact-list">
-            
             </div>
         </div>
     </div>
+
+    <div class="chat">
+        <h1 class="contact-name"></h1>
+        <div class="chatbox">
+            <input type="search">
+            <button class="sendMsg">🚀</button>
+
+        </div>
+    </div>
+
+
 </body>
 <script src="script.js"></script>
 </html>
