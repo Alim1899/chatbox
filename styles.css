@@ -2,26 +2,30 @@
     --viewWidth: 500px;
 }
 
+body{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
 .box{
-    display: block;
-    margin-left:150px;
-    margin-top: 50px;
+    position: absolute;
+    
     width:var(--viewWidth);
-    height:70vh;
+    height: 500px;
     border-radius: 50px;
     background-color: #b02fe4;
-    display: none;
+    box-sizing: border-box;
+    opacity: 0;
 }
 .chat{
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-    margin-left:150px;
-    margin-top: 50px;
-    width:var(--viewWidth);    height:70vh;
-    
+    width:var(--viewWidth); 
+    height: 700px;
     border-radius: 50px;
-    background-color: #b02fe4;
+    background-color: #e4592f;
+    border: 2px solid black;
+    opacity: 1;
+    
 }
 
 .heading{
@@ -38,25 +42,25 @@
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
     width:100%;
-    height: 77%;
+    height: 80%;
     border-radius: 50px;
     background-color: #f4ecf5;
     display: block;
     max-height: 100%;
     overflow-y:scroll;
 }
+.contact-name{
+    height: 20%;
+}
 .chatbox{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    position: relative;
+    height: 100%;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
     width:100%;
-    height: 77%;
+    height: 60%;
     border-radius: 50px;
     background-color: #f4ecf5;
-    max-height: 100%;
-    overflow-y:scroll;
 }
 .chatbox > input{
     width:300px;
@@ -74,6 +78,17 @@
 .chatbox > button:hover{
     background-color: #b02fe4;
 }
+.sentMsg {
+    width:var(--viewWidth);
+    text-align: right;
+    position: absolute;
+    margin-bottom: 200px;
+}
+.sentMsg>p{
+        border: 1px solid black;
+        font-size: x-large;
+}
+
 ::-webkit-scrollbar{
     width: 0px;
 }

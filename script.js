@@ -35,12 +35,11 @@ endMessage.className = 'endMsg';
 
     const addSuggs = function(arr){
         arr.forEach(el => suggs.insertAdjacentHTML('afterbegin', `
-        <option>${el.name} <button class='sendMsg'>💬</button></option>
+        <button class="optBtn"><option class="optGroup">${el.name}</option></button>
         `));
     }
     addSuggs(contacts);
 
-    console.log(suggs);
 
     const addName = function(arr){
         arr.forEach(el => contactList.insertAdjacentHTML('afterbegin',`
@@ -54,12 +53,18 @@ endMessage.className = 'endMsg';
     }
     addName(contacts);
 
-    
 
+    ///Code for Chatting page
+    const chatName = document.querySelectorAll(".name");
+    console.log(chatName);
+    chatName.forEach(el => el.addEventListener('click', function(e){
+    // const conName = document.querySelector('.contact').textContent = chatName;
+    document.querySelector('.box').style.opacity = 0;
+    document.querySelector('.chat').style.opacity = 1;
+    }))
 
-
-
-
+    const cName = document.querySelector('.contact-name').textContent = chatName;
+    console.log(cName);
 
 
 
