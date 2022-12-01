@@ -19,11 +19,11 @@ const list2 = document.querySelectorAll('.name');
 const msgContact = document.querySelector('.contact-name');
 const undoBtn = document.querySelector(".btn-exit");
     const contact6 = {
-        name: 'Murmana Zedubneli'
+        name: 'Harry Maguire'
     }
 
     const contact5 = {
-        name: 'Jumbera Qvedubneli'
+        name: 'Lionel Messi'
     }
     const contact4 = {
         name: 'Jonas Schchmetdmann'
@@ -32,7 +32,7 @@ const undoBtn = document.querySelector(".btn-exit");
         name : 'Mikheil Margishvili'
     };
     const contact2 = {
-        name : 'Mr. Koba Gelashvili'
+        name : 'Mr. Suliko Qumaritov'
     };
     const contact1 = {
         name : 'Alim Akhchanogli'
