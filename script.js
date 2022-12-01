@@ -74,9 +74,9 @@ const undoBtn = document.querySelector(".btn-exit");
        contacts.forEach(el => contArr.push(el.name))
       
       if(contArr.includes(chatName)){
-        firstPage.style.opacity = 0;
-        secondPage.style.opacity = 1;
-        errorMessage.style.opacity = 0;
+        firstPage.style.visibility = 'hidden';
+        secondPage.style.visibility = 'visible';
+        errorMessage.style.visibility = 'hidden';
         msgContact.textContent = chatName;
       }else if(chatName.length>0){
         errorMessage.textContent = "Please select right contact"
@@ -84,27 +84,46 @@ const undoBtn = document.querySelector(".btn-exit");
 
     }else{       
         errorMessage.textContent = "Please wright contact name"
-        errorMessage.style.opacity = 1;
+        errorMessage.style.visibility = 1;
       }
     })
     
 
-    console.log(list2);
     const lisst = document.querySelectorAll('.name');
     // Event listener for start messaging with selected contact from contact-list
 
     lisst.forEach(el => el.addEventListener('click', function (e){
          
-         firstPage.style.opacity = 0;
-        secondPage.style.opacity = 1;
+         firstPage.style.visibility = 'hidden';
+        secondPage.style.visibility = 'visible';
           msgContact.textContent = e.target.textContent;
       }))
 
       undoBtn.addEventListener('click', function(e){
-        firstPage.style.opacity = 1;
-        secondPage.style.opacity = 0;
+        firstPage.style.visibility = 'visible';
+        secondPage.style.visibility = 'hidden';
       })
       
+      function clearInput(id){
+        document.getElementById(id).reset();
+      }
+
+      const messageToChat = document.querySelector('.sentMsgToChat');
+      console.log(messageToChat);
+      messageToChat.addEventListener('click', function(e){
+        let message = document.querySelector('.messageArea').value;
+        const msgDiv = document.querySelector('.sentMSG-div');
+        console.log(message);
+        console.log(msgDiv);
+        if(message.length>0){
+            msgDiv.insertAdjacentHTML("afterbegin",`
+            <p class="sentMsg-p">${message}</p>
+            `);
+             clearInput("board")
+        }else{
+            console.log(message);
+        }
+      })
 
 
 

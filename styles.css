@@ -175,8 +175,8 @@ text-align-last: left;
 
 
 .box{
-    opacity: 1;
+    visibility: hidden;
 }
 .chat{
-    opacity: 1;
+visibility: visible;
 }
