@@ -1,17 +1,23 @@
 'use strict'; 
 //Code for contact list page
 //HTML elements
+const firstPage = document.querySelector(".box");
+const secondPage = document.querySelector(".chat");
 const contactDiv = document.createElement('div');
 const contactName = document.createElement('h2');
 const contactList = document.querySelector('.contact-list');
 const suggs = document.querySelector(".suggs");
+const errorMessage = document.querySelector('.errorMsg');
 contactDiv.className = "contact";
 contactName.className = 'name';
 const endMessage = document.createElement("h3");
-endMessage.className = 'endMsg';
+    endMessage.className = 'endMsg';
     endMessage.textContent = "End of the list";
-
-
+    
+const startChat = document.querySelector('.sendBtn');  
+const list2 = document.querySelectorAll('.name');
+const msgContact = document.querySelector('.contact-name');
+const undoBtn = document.querySelector(".btn-exit");
     const contact6 = {
         name: 'Murmana Zedubneli'
     }
@@ -32,15 +38,16 @@ endMessage.className = 'endMsg';
         name : 'Alim Akhchanogli'
     };
     const contacts = [contact1, contact2, contact3, contact4, contact5, contact6];
-
+          
+    //Function for add suggestion from contact list to search-bar
     const addSuggs = function(arr){
         arr.forEach(el => suggs.insertAdjacentHTML('afterbegin', `
         <button class="optBtn"><option class="optGroup">${el.name}</option></button>
         `));
     }
-    addSuggs(contacts);
+    
 
-
+        // Function for add contact names from array to interface
     const addName = function(arr){
         arr.forEach(el => contactList.insertAdjacentHTML('afterbegin',`
         <div class='contact'>
@@ -51,20 +58,53 @@ endMessage.className = 'endMsg';
          ));
          contactList.appendChild(endMessage);
     }
-    addName(contacts);
+        //Calling functions
+        addName(contacts);
+        addSuggs(contacts);
 
 
     ///Code for Chatting page
-    const chatName = document.querySelectorAll(".name");
-    console.log(chatName);
-    chatName.forEach(el => el.addEventListener('click', function(e){
-    // const conName = document.querySelector('.contact').textContent = chatName;
-    document.querySelector('.box').style.opacity = 0;
-    document.querySelector('.chat').style.opacity = 1;
-    }))
+    
 
-    const cName = document.querySelector('.contact-name').textContent = chatName;
-    console.log(cName);
+    
+    // Event listener for start messaging with selected contact from suggestion
+    startChat.addEventListener('click', function (e){
+      const chatName = document.querySelector('.search').value;
+      const contArr =[];
+       contacts.forEach(el => contArr.push(el.name))
+      
+      if(contArr.includes(chatName)){
+        firstPage.style.opacity = 0;
+        secondPage.style.opacity = 1;
+        errorMessage.style.opacity = 0;
+        msgContact.textContent = chatName;
+      }else if(chatName.length>0){
+        errorMessage.textContent = "Please select right contact"
+            errorMessage.style.opacity = 1;
+
+    }else{       
+        errorMessage.textContent = "Please wright contact name"
+        errorMessage.style.opacity = 1;
+      }
+    })
+    
+
+    console.log(list2);
+    const lisst = document.querySelectorAll('.name');
+    // Event listener for start messaging with selected contact from contact-list
+
+    lisst.forEach(el => el.addEventListener('click', function (e){
+         
+         firstPage.style.opacity = 0;
+        secondPage.style.opacity = 1;
+          msgContact.textContent = e.target.textContent;
+      }))
+
+      undoBtn.addEventListener('click', function(e){
+        firstPage.style.opacity = 1;
+        secondPage.style.opacity = 0;
+      })
+      
 
 
 

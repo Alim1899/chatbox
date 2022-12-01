@@ -1,93 +1,56 @@
 :root{
     --viewWidth: 500px;
+    --mainColor: #ccb0dd;
 }
 
-body{
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-}
-.box{
-    position: absolute;
-    
+
+/* Styles that matching for contact list and chat pages */
+.box, .chat{
     width:var(--viewWidth);
-    height: 500px;
-    border-radius: 50px;
-    background-color: #b02fe4;
-    box-sizing: border-box;
-    opacity: 0;
-}
-.chat{
-    width:var(--viewWidth); 
     height: 700px;
+    position: absolute;
     border-radius: 50px;
-    background-color: #e4592f;
-    border: 2px solid black;
-    opacity: 1;
-    
+    background-color:var(--mainColor);
 }
-
+/* Temporary */
+/* .chat{
+    margin-left: var(--viewWidth); 
+} */
+/* Styles for first Page  - Contact list */
 .heading{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20%;
+    height: 10%;
     color:rgb(243, 247, 247);
     font-size: 3rem;
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace;
+    position:relative;
 }
 
 .contact-list{
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
     width:100%;
-    height: 80%;
+    height: 498px;
     border-radius: 50px;
     background-color: #f4ecf5;
     display: block;
-    max-height: 100%;
+    max-height: 80%;
     overflow-y:scroll;
 }
-.contact-name{
-    height: 20%;
+
+
+.errorMsg{
+text-align: center;
+color: #e43011;
+position: absolute;
+margin-left: 180px;
+margin-top: -35px;
+font-size: 1.5rem;
+opacity: 0;
 }
-.chatbox{
-    position: relative;
-    height: 100%;
-    font-weight: 600;
-    font-family: 'Courier New', Courier, monospace;
-    width:100%;
-    height: 60%;
-    border-radius: 50px;
-    background-color: #f4ecf5;
-}
-.chatbox > input{
-    width:300px;
-    height: 50px;
-    margin-bottom: 40px;
-    border: none;
-    border-radius: 40px;
-    font-size: large;
-}
-.chatbox > button{
-    margin-bottom: 45px;
-    font-size: 1.6rem;
-    border: none;
-}
-.chatbox > button:hover{
-    background-color: #b02fe4;
-}
-.sentMsg {
-    width:var(--viewWidth);
-    text-align: right;
-    position: absolute;
-    margin-bottom: 200px;
-}
-.sentMsg>p{
-        border: 1px solid black;
-        font-size: x-large;
-}
+
 
 ::-webkit-scrollbar{
     width: 0px;
@@ -113,12 +76,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #b02fe4;
+    border-bottom: 1px solid var(--mainColor);
     border-radius: 20px;
     height: 20%;
     
 }
 .name{
+    width: 100%;
+    height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -130,4 +95,88 @@ align-items: center;
     text-decoration: underline;
     font-weight: 700;
     color: #e43011;
+}
+
+.material-icons{
+    color: #f4ecf5
+}
+.material-icons:hover{
+    cursor:pointer;
+}
+
+/* Styles for secong page - messaging with selected contact */
+.chat{
+    display: block;
+}
+.chatbox{
+    font-weight: 600;
+    width:94%;
+    height: 450px;
+    border-radius: 50px;
+    background-color: #f4ecf5;
+    margin-left: 3%;
+}
+.contact-name{
+    height: 19.8%;
+    width: 90%;
+    margin-left: 5%;
+    word-break: break-all;
+    text-align: justify;
+text-justify: distribute;
+text-align-last: left;
+    color:rgb(243, 247, 247);
+    font-size: 3rem;
+    font-family:'Courier New', Courier, monospace;
+}
+.sentMsg-div {
+    width: 100%;
+    max-height: 400px;
+    text-align: right;
+    font-family:'Courier New', Courier, monospace;
+    overflow: scroll;
+}
+.sentMsg-p{
+    width: 95%;
+}
+.exitBtn{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: none;
+    position: absolute;
+    margin-top: -50px;
+
+}
+
+.textboard{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 10px;
+    background-color: #ccb0dd;
+
+}
+.messageArea{
+    height: 28px;
+    
+}
+
+
+.material-symbols-outlined{
+   border: none;
+
+   
+}
+
+
+
+.box{
+    opacity: 1;
+}
+.chat{
+    opacity: 1;
 }
