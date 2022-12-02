@@ -1,21 +1,85 @@
 :root{
     --viewWidth: 500px;
-    --mainColor: #ccb0dd;
+    --mainColor: #8d4bb6;
+    --mainTextColor:#ecccf0;
+    --viewHeight: 700px;
+    --mainBorderRadius: 50px;
+    --mainFont:'Courier New', Courier, monospace;
 }
 
+/* Styles for signup and login page */
+.signup{
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.signupMsg{
+    position: absolute;
+    margin-top: -620px;
+    font-weight: 900;
+    font-family: sans-serif;
+    color:var(--mainTextColor);
+    font-size: 1.7rem;
+}
+.nameLabel, .passwordLabel, .passwordConfirmLabel, .submitLabel{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+.labelHead{
+    display: block;
+    width: 250px;
+    margin: 10% auto;
+}
+.labelHead>input{
+    height: 30px;
+    width: 100%;
+    border: 1px solid var(--mainColor);
+}
+.submitLabel{
+    height: 30px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.submitLabel>button{
+    width: 100%;
+    border: 1px solid var(--mainColor);
+    background-color: white;
+    font-family: sans-serif;
+}
+.submitLabel>button:hover{
+    height: 150%;
+    background-color: #e2d0ee;
+    font-size: 1.4rem;
+}
+
+.nameLabel{
+    margin-top: 30%;
+}
+.signupDiv{
+    margin-top: 10%;
+    width: 90%;
+    height: 90%;
+    border-radius: var(--mainBorderRadius);
+    background-color:var(--mainTextColor);
+}
 
 /* Styles that matching for contact list and chat pages */
-.box, .chat{
+.box, .chat, .signup{
     width:var(--viewWidth);
-    height: 700px;
+    height: var(--viewHeight);
     position: absolute;
-    border-radius: 50px;
+    border-radius: var(--mainBorderRadius);
     background-color:var(--mainColor);
+    font-family:var(--mainFont);
+
 }
 /* Temporary */
-/* .chat{
+.chat{
     margin-left: var(--viewWidth); 
-} */
+}
 /* Styles for first Page  - Contact list */
 .heading{
     display: flex;
@@ -24,17 +88,16 @@
     height: 10%;
     color:rgb(243, 247, 247);
     font-size: 3rem;
-    font-family:'Courier New', Courier, monospace;
+    font-family:var(--mainFont);
     position:relative;
 }
 
 .contact-list{
     font-weight: 600;
-    font-family: 'Courier New', Courier, monospace;
     width:100%;
     height: 498px;
-    border-radius: 50px;
-    background-color: #f4ecf5;
+    border-radius: var(--mainBorderRadius);
+    background-color: var(--mainTextColor);
     display: block;
     max-height: 80%;
     overflow-y:scroll;
@@ -66,9 +129,8 @@ opacity: 0;
     width: 300px;
     font-size: larger;
     height: 50px;
-    background-color: #f4ecf5;
+    background-color: var(--mainTextColor);
     border: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
@@ -98,7 +160,7 @@ align-items: center;
 }
 
 .material-icons{
-    color: #f4ecf5
+    color: var(--mainTextColor);
 }
 .material-icons:hover{
     cursor:pointer;
@@ -112,8 +174,8 @@ align-items: center;
     font-weight: 600;
     width:94%;
     height: 450px;
-    border-radius: 50px;
-    background-color: #f4ecf5;
+    border-radius: var(--mainBorderRadius);
+    background-color: var(--mainTextColor);
     margin-left: 3%;
 }
 .contact-name{
@@ -126,13 +188,11 @@ text-justify: distribute;
 text-align-last: left;
     color:rgb(243, 247, 247);
     font-size: 3rem;
-    font-family:'Courier New', Courier, monospace;
 }
 .sentMsg-div {
     width: 100%;
     max-height: 400px;
     text-align: right;
-    font-family:'Courier New', Courier, monospace;
     overflow: scroll;
 }
 .sentMsg-p{
@@ -175,7 +235,7 @@ text-align-last: left;
 
 
 .box{
-    visibility: visible;
+    visibility: hidden;
 }
 .chat{
 visibility: hidden;

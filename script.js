@@ -94,7 +94,7 @@ const undoBtn = document.querySelector(".btn-exit");
 
     lisst.forEach(el => el.addEventListener('click', function (e){
          
-         firstPage.style.visibility = 'hidden';
+        firstPage.style.visibility = 'hidden';
         secondPage.style.visibility = 'visible';
           msgContact.textContent = e.target.textContent;
       }))
