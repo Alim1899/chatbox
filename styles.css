@@ -74,6 +74,15 @@
     cursor: text;
 
 }
+
+.show{
+    position: absolute;
+    margin-left: 275px;
+    margin-top: -45px;
+}
+.eyeIconHide{
+    visibility: hidden;
+}
 /* Styles for name and lastname */
 .nameAndLastname{
     display: flex;

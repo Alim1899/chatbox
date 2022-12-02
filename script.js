@@ -141,7 +141,29 @@ const undoBtn = document.querySelector(".btn-exit");
       
       ///Check passwords matching or not
        const submit = document.querySelector('.submitBtn');
+       const eyeIcon = document.querySelectorAll('.show');
+       const eyeIconHide = document.querySelector('.eyeIconHide');
 
+       const passLabel = document.querySelector('.passwordlabel');
+      let eye = document.querySelector('.eyeIcon').textContent;
+       eyeIcon.forEach(el => el.addEventListener("click", function(e){
+       
+       console.log(eye);
+       
+        if(eye=='visibility'){
+            eyeIconHide.style.visibility = 'visible';
+            
+            
+            eye='visibility_off '
+        }else{ 
+            
+            
+            eyeIconHide.style.visibility = 'hidden';
+           
+           eye = "visibility"
+        }
+        
+       }));
 
       const check = function() {
         const pass = document.querySelector('.password').value;
