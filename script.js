@@ -152,14 +152,9 @@ const undoBtn = document.querySelector(".btn-exit");
        
         if(eye=='visibility'){
             eyeIconHide.style.visibility = 'visible';
-            
-            
             eye='visibility_off '
         }else{ 
-            
-            
             eyeIconHide.style.visibility = 'hidden';
-           
            eye = "visibility"
         }
         
@@ -169,11 +164,17 @@ const undoBtn = document.querySelector(".btn-exit");
         const pass = document.querySelector('.password').value;
         const conPass = document.querySelector('.confirmPassword').value;
         const message = document.querySelector('.matchMessage');
+        const confirm = document.querySelector('.confirmPassword');
+        const password = document.querySelector('.password');
         if (pass == conPass) {
           message.style.color = 'green';
           message.innerHTML = 'matching';
+          confirm.style.border = '3px solid green';
+          password.style.border = '3px solid green';
           submit.disabled = false;
         } else {
+            confirm.style.border = '3px solid red';
+          password.style.border = '3px solid red';
           message.style.color = 'red';
           message.innerHTML = 'not matching';
           submit.disabled = true;

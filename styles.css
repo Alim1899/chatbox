@@ -74,6 +74,14 @@
     cursor: text;
 
 }
+.matchMessage{
+    position: absolute;
+    color: red;
+    margin-top: -15px;
+    margin-left: 125px;
+    font-size: 1rem;
+}
+
 
 .show{
     position: absolute;
