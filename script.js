@@ -23,7 +23,15 @@ const undoBtn = document.querySelector(".btn-exit");
     }
 
     const contact5 = {
-        name: 'Lionel Messi'
+        name: 'Lionel',
+        lastName: 'Messi',
+        email: 'lionelMessi@gmail.com',
+        password: 'messi123',
+        birthday : {
+            day: '21',
+            month:'02',
+            year:'1998'
+        }
     }
     const contact4 = {
         name: 'Jonas Schchmetdmann'
@@ -109,7 +117,7 @@ const undoBtn = document.querySelector(".btn-exit");
       }
 
       const messageToChat = document.querySelector('.sentMsgToChat');
-      console.log(messageToChat);
+      
       messageToChat.addEventListener('click', function(e){
         let message = document.querySelector('.messageArea').value;
         const msgDiv = document.querySelector('.sentMSG-div');
@@ -126,4 +134,21 @@ const undoBtn = document.querySelector(".btn-exit");
       })
 
 
+
+
+
+      //////////////////////////////////////////////////
+      //SIGNUP PAGE//
+      const userName = document.querySelector(".userName");
+      const userLastname = document.querySelector(".userLastname");
+      const userEmail = document.querySelector(".emailLabel");
+      const userBirthYear = document.querySelector(".birthYear").year;
+      const userProfilePicture = document.querySelector('.picture');
+      const password = document.querySelector(".password");
+      const confirmPassword = document.querySelector(".confirmPassword");
+      const submit = document.querySelector('.submitBtn');
+     
+         console.log(userName, userLastname, userEmail, userBirthYear,userProfilePicture, password, confirmPassword);
+      console.log(submit);
+      
 

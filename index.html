@@ -15,9 +15,18 @@
     <form class="signup">
         <h2 class="signupMsg">Fill all fields for sign up</h2>
         <div class="signupDiv">
-        <label class="nameLabel"><h4 class="labelHead">Full Name:<input type="text" placeholder="@Example: Steve Mc Gregory"></h4></label>
+            <div class="nameAndLastname"> 
+                <label class="nameLastnameLabel"><h4 class="labelHeadd">Name:<input class="userName" type="text" placeholder="@John"></h4></label>
+                <label class="lastnameLabel"><h4 class="labelHeadd">Lastname:<input class="userLastname" type="text" placeholder="@Smith"></h4></label>
+            </div>
+        
+        <label class="emailLabel"><h4 class="labelHead">E-mail<input type="email" placeholder="example@example.com"></h4></label>
+        <label class="profilePictureLabel"><h4 class="labelHead">Profile picture<input type="file" ></h4></label>
+        <label class="profilePictureLabel"><h4 class="labelHead">Birth year<input type="date" ></h4></label>
+
         <label class="passwordLabel"><h4 class="labelHead">Password:<input type="password" ></h4></label>
         <label class="passwordConfirmLabel"><h4 class="labelHead">Confirm Password:<input type="password" ></h4></label>
+        
         <label class="submitLabel"><Button class="submitBtn" type="submit">Submit</Button></label>  
         </div>
     </form>

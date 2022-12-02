@@ -1,7 +1,7 @@
 :root{
     --viewWidth: 500px;
-    --mainColor: #8d4bb6;
-    --mainTextColor:#ecccf0;
+    --mainColor: #1a62ad;
+    --mainTextColor:#20dacc;
     --viewHeight: 700px;
     --mainBorderRadius: 50px;
     --mainFont:'Courier New', Courier, monospace;
@@ -19,10 +19,10 @@
     margin-top: -620px;
     font-weight: 900;
     font-family: sans-serif;
-    color:var(--mainTextColor);
+    color:bisque;
     font-size: 1.7rem;
 }
-.nameLabel, .passwordLabel, .passwordConfirmLabel, .submitLabel{
+ .passwordLabel, .passwordConfirmLabel, .submitLabel{
     display: block;
     margin: auto;
     width: 80%;
@@ -30,7 +30,7 @@
 .labelHead{
     display: block;
     width: 250px;
-    margin: 10% auto;
+    margin: 5% auto;
 }
 .labelHead>input{
     height: 30px;
@@ -50,9 +50,9 @@
     font-family: sans-serif;
 }
 .submitLabel>button:hover{
-    height: 150%;
-    background-color: #e2d0ee;
+    height: 110%;
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .nameLabel{
@@ -64,6 +64,32 @@
     height: 90%;
     border-radius: var(--mainBorderRadius);
     background-color:var(--mainTextColor);
+}
+
+.signup > .signupDiv > label > h4 > input {
+    border-radius: 10px;
+}
+.signup > .signupDiv > label > h4 > input:hover {
+    border: 1px solid #818686;
+    cursor: text;
+
+}
+/* Styles for name and lastname */
+.nameAndLastname{
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    margin: auto;
+}
+.nameAndLastname > label>h4>input{
+  
+    height: 30px;
+    width: 200px;
+}
+.nameAndLastname > label{
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* Styles that matching for contact list and chat pages */
