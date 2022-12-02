@@ -136,19 +136,55 @@ const undoBtn = document.querySelector(".btn-exit");
 
 
 
-
-      //////////////////////////////////////////////////
+  //////////////////////////////////////////////////
       //SIGNUP PAGE//
-      const userName = document.querySelector(".userName");
-      const userLastname = document.querySelector(".userLastname");
-      const userEmail = document.querySelector(".emailLabel");
-      const userBirthYear = document.querySelector(".birthYear").year;
-      const userProfilePicture = document.querySelector('.picture');
-      const password = document.querySelector(".password");
-      const confirmPassword = document.querySelector(".confirmPassword");
-      const submit = document.querySelector('.submitBtn');
+      
+      ///Check passwords matching or not
+       const submit = document.querySelector('.submitBtn');
+
+
+      const check = function() {
+        const pass = document.querySelector('.password').value;
+        const conPass = document.querySelector('.confirmPassword').value;
+        const message = document.querySelector('.matchMessage');
+        if (pass == conPass) {
+          message.style.color = 'green';
+          message.innerHTML = 'matching';
+          submit.disabled = false;
+        } else {
+          message.style.color = 'red';
+          message.innerHTML = 'not matching';
+          submit.disabled = true;
+        }
+      }
+   
      
-         console.log(userName, userLastname, userEmail, userBirthYear,userProfilePicture, password, confirmPassword);
-      console.log(submit);
+     
+      const list3 = [];
+
+       
+
+      submit.addEventListener('click', function(e){
+        e.preventDefault();
+        const user = {};
+        const userName = document.querySelector(".userName").value; 
+          const userLastname = document.querySelector(".userLastname").value;
+      const userEmail = document.querySelector(".email").value;
+      const userBirthDay = document.querySelector(".birthYear").value;
+      const userProfilePicture = document.querySelector('.picture').value;
+      const password = document.querySelector(".confirmPassword").value;
+        console.log(`Name: ${userName}, lastname: ${userLastname}, Email: ${userEmail}, Birth Year: ${userBirthDay},
+        profile picture: ${userProfilePicture}, password: ${password}`);
+        user.name = userName;
+        user.lastName = userLastname;
+        user.email = userEmail;
+        user.birthday = userBirthDay;
+        user.profilePicture = userProfilePicture;
+        user.password = password;
+        list3.push(user);
+
+
+      })
+    console.log(list3);
       
 
