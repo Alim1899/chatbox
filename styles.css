@@ -6,111 +6,60 @@
     --mainBorderRadius: 50px;
     --mainFont:'Courier New', Courier, monospace;
 }
-
-/* Styles for signup and login page */
+.sign{
+    display: block;
+    text-align: center;
+    
+}
 .signup{
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.signupMsg{
-    position: absolute;
-    margin-top: -620px;
+    font-size: x-large;
     font-weight: 900;
-    font-family: sans-serif;
-    color:bisque;
-    font-size: 1.7rem;
-}
- .passwordLabel, .passwordConfirmLabel, .submitLabel{
-    display: block;
-    margin: auto;
-    width: 80%;
-}
-.labelHead{
-    display: block;
-    width: 250px;
-    margin: 5% auto;
-}
-.labelHead>input{
-    height: 30px;
-    width: 100%;
-    border: 1px solid var(--mainColor);
-}
-.submitLabel{
-    height: 30px;
-    width: 40%;
-    display: flex;
-    justify-content: center;
-}
-.submitLabel>button{
-    width: 100%;
-    border: 1px solid var(--mainColor);
-    background-color: white;
-    font-family: sans-serif;
-}
-.submitLabel>button:hover{
-    height: 110%;
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-.nameLabel{
-    margin-top: 30%;
-}
-.signupDiv{
-    margin-top: 10%;
-    width: 90%;
+    background-color: var(--mainTextColor);
     height: 90%;
-    border-radius: var(--mainBorderRadius);
-    background-color:var(--mainTextColor);
-}
-
-.signup > .signupDiv > label > h4 > input {
-    border-radius: 10px;
-}
-.signup > .signupDiv > label > h4 > input:hover {
-    border: 1px solid #818686;
-    cursor: text;
-
-}
-.matchMessage{
-    position: absolute;
-    color: red;
-    margin-top: -15px;
-    margin-left: 125px;
-    font-size: 1rem;
-}
-
-
-.show{
-    position: absolute;
-    margin-left: 275px;
-    margin-top: -45px;
-}
-.eyeIconHide{
-    visibility: hidden;
-}
-/* Styles for name and lastname */
-.nameAndLastname{
-    display: flex;
-    width: 100px;
-    justify-content: center;
+    width: 92%;
     margin: auto;
+    border-radius: var(--mainBorderRadius);
+    overflow:auto;
 }
-.nameAndLastname > label>h4>input{
-  
-    height: 30px;
+form{
+    display: block;
+    justify-content:center;
+}
+fieldset>label>input:focus{
+    outline: none;
+    border: 3px solid #1a62ad;
+}
+.passwordField>label>input:focus{
+    border: none;
+}
+
+fieldset>label>input{
+    position: relative;
+display: block;
+margin: auto;
+width: 100%;
+margin-bottom: 5%;
+border: none;
+border-radius: 15px;
+height: 30px;
+}
+.profilePictureLabel>input{
     width: 200px;
 }
-.nameAndLastname > label{
-    margin-top: 15%;
-    margin-left: 5%;
-    margin-right: 5%;
+
+
+.showHide{
+display: flex;
+margin-left: -23;
+}
+
+.hide{
+visibility: hidden;
+margin-left: -11px;
 }
 
 /* Styles that matching for contact list and chat pages */
-.box, .chat, .signup{
+.box, .chat, .sign{
     width:var(--viewWidth);
     height: var(--viewHeight);
     position: absolute;

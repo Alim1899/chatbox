@@ -12,25 +12,43 @@
 </head>
 <body>
     <!-- html for ligin page -->
-    <form class="signup">
-        <h2 class="signupMsg">Fill all fields for sign up</h2>
-        <div class="signupDiv">
-            <div class="nameAndLastname"> 
-                <label class="nameLastnameLabel"><h4 class="labelHeadd">Name:<input class="userName" type="text" placeholder="@John"></h4></label>
-                <label class="lastnameLabel"><h4 class="labelHeadd">Lastname:<input class="userLastname" type="text" placeholder="@Smith"></h4></label>
-            </div>
-        
-        <label class="emailLabel"><h4 class="labelHead">E-mail<input class="email" type="email" placeholder="example@example.com"></h4></label>
-        <label class="profilePictureLabel"><h4 class="labelHead">Profile picture<input class="picture" type="file" ></h4></label>
-        <label class="birthYearLabel"><h4 class="labelHead">Birth date<input class="birthYear" type="date" ></h4></label>
+    <div class="sign">
+        <h2 class="signupMsg" style="color:white;">Fill all fields for sign up</h2>
 
-        <label class="passwordLabel"><h4 class="labelHead">Password:<input  class="password" type="password" onkeyup="check()"></h4><span class="material-symbols-outlined show eyeIcon">visibility</span><span class="material-symbols-outlined show eyeIconHide">
-                visibility_off</span><h6 class="matchMessage"></h6></label>
-        <label class="passwordConfirmLabel"><h4 class="labelHead">Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></h4></label>
+    <form class="signup">
+        <fieldset style="border:none;" class="signupDiv">
+                <label class="LastnameLabel">Name:<input class="userName" type="text" placeholder="@John" required></label>
+                <label class="lastnameLabel">Lastname:<input class="userLastname" type="text" placeholder="@Smith" required></label>
+            </fieldset>
+        <fieldset style="border:none;" class="detailFields">
+        <label class="emailLabel">E-mail<input class="email" type="email" placeholder="example@example.com" required pattern="/@./" ></label>
+        <label class="profilePictureLabel">Profile picture<input class="picture" type="file" ></label>
+        <label class="birthYearLabel">Birth date<input class="birthYear" type="date" ></label>
+
+        <fieldset style="border:none;" class="passwordField">
+
+        <label class="passwordLabel">Password:<input  class="password" type="password" placeholder="Minimum 6 symbols" onkeyup="check()">
+            <div class="showHide">
+               <h5 class="showPass">
+                 <span class="material-symbols-outlined show eyeIcon">visibility_off</span>
+                <i class="material-symbols-outlined hide eyeIcon">visibility</i>
+                <h4 class="forToggle">Show</h4>
+            </h5>
+            </div>
+            
+            
+        </label>
+        <label class="passwordConfirmLabel"> Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></label>
+        </fieldset>
+        <label class="submitLabel"><input class="submitBtn" value="Submit" type="submit"></label>  
+        </fieldset>
         
-        <label class="submitLabel"><Button class="submitBtn" type="submit">Submit</Button></label>  
-        </div>
     </form>
+      </div>
+
+
+
+
     <!-- html for contact-list page -->
     <div class="box">
         <h1 class="heading">Contact List</h1>

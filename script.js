@@ -139,33 +139,59 @@ const undoBtn = document.querySelector(".btn-exit");
   //////////////////////////////////////////////////
       //SIGNUP PAGE//
       
-      ///Check passwords matching or not
+      
        const submit = document.querySelector('.submitBtn');
-       const eyeIcon = document.querySelectorAll('.show');
-       const eyeIconHide = document.querySelector('.eyeIconHide');
-
+       const eyeIcon = document.querySelectorAll('.eyeIcon');
        const passLabel = document.querySelector('.passwordlabel');
-      let eye = document.querySelector('.eyeIcon').textContent;
-       eyeIcon.forEach(el => el.addEventListener("click", function(e){
        
-       console.log(eye);
-       
-        if(eye=='visibility'){
-            eyeIconHide.style.visibility = 'visible';
-            eye='visibility_off '
-        }else{ 
-            eyeIconHide.style.visibility = 'hidden';
-           eye = "visibility"
+       //Array for storing new users
+       const addContact = [
+        //example user
+         {
+          name:'Alim',
+          lastName:'Akhchan',
+          email:'example@gmail.com',
         }
-        
-       }));
+       ];
 
-      const check = function() {
+       
+
+       //SHow/ hide passwords
+       eyeIcon.forEach(el => el.addEventListener("click", function(e){
+        const pass = document.querySelector('.password');
+        const conPass = document.querySelector('.confirmPassword')
+        const icon = document.querySelector('.hide');
+        const icon2 = document.querySelector('.show');
+        const margin = document.querySelector('.showHide');
+        
+        let eye = document.querySelector('.forToggle').textContent;
+        if(eye=='Show'){
+            document.querySelector(".forToggle").textContent='Hide'
+           icon.style.visibility='visible'
+           icon2.style.visibility='hidden'
+           icon2.style.marginLeft = '-25px';
+           let eye = document.querySelector('.forToggle').style.marginLeft='25px'
+           conPass.type = 'text';
+           pass.type = "text";
+        }else{ 
+          icon.style.visibility='hidden'
+          icon2.style.visibility='visible'
+          conPass.type = 'password';
+           pass.type = "password";
+           icon2.style.marginLeft = '0px';
+           let eye = document.querySelector('.forToggle').style.marginLeft='0px'
+            document.querySelector(".forToggle").textContent='Show'
+        }
+        console.log(eye);
+       }));
+       
+          ///Check passwords matching or not
+        const check = function() {
         const pass = document.querySelector('.password').value;
         const conPass = document.querySelector('.confirmPassword').value;
-        const message = document.querySelector('.matchMessage');
         const confirm = document.querySelector('.confirmPassword');
         const password = document.querySelector('.password');
+        if(pass.length>=6){
         if (pass == conPass) {
           message.style.color = 'green';
           message.innerHTML = 'matching';
@@ -180,10 +206,12 @@ const undoBtn = document.querySelector(".btn-exit");
           submit.disabled = true;
         }
       }
+      
+      }
    
      
      
-      const list3 = [];
+      
 
        
 
@@ -196,18 +224,22 @@ const undoBtn = document.querySelector(".btn-exit");
       const userBirthDay = document.querySelector(".birthYear").value;
       const userProfilePicture = document.querySelector('.picture').value;
       const password = document.querySelector(".confirmPassword").value;
-        console.log(`Name: ${userName}, lastname: ${userLastname}, Email: ${userEmail}, Birth Year: ${userBirthDay},
-        profile picture: ${userProfilePicture}, password: ${password}`);
+        console.log(userName, userLastname, userEmail, userBirthDay, userProfilePicture, password);
         user.name = userName;
         user.lastName = userLastname;
         user.email = userEmail;
         user.birthday = userBirthDay;
         user.profilePicture = userProfilePicture;
         user.password = password;
-        list3.push(user);
 
+        console.log(addContact);
+        addContact.forEach(el => {
+          if(user.email != el.email){
+            addContact.push(user);
+            console.log(addContact);
+          }
+        })
 
       })
-    console.log(list3);
       
 
