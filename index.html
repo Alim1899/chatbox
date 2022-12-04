@@ -15,7 +15,7 @@
     <div class="sign">
         <h2 class="signupMsg" style="color:white;">Fill all fields for sign up</h2>
 
-    <form class="signup">
+        <form class="signup">
         <fieldset style="border:none;" class="signupDiv">
                 <label class="LastnameLabel">Name:<input class="userName" type="text" placeholder="@John" required></label>
                 <label class="lastnameLabel">Lastname:<input class="userLastname" type="text" placeholder="@Smith" required></label>
@@ -35,15 +35,30 @@
                 <h4 class="forToggle">Show</h4>
             </h5>
             </div>
-            
-            
         </label>
-        <label class="passwordConfirmLabel"> Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></label>
+        <label class="passwordConfirmLabel" style="font-weight: bold;"> Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></label>
         </fieldset>
         <label class="submitLabel"><input class="submitBtn" value="Submit" type="submit"></label>  
         </fieldset>
-        
     </form>
+      </div>
+
+
+      <!-- HTML for login page -->
+      <div class="login">
+        <h1>Log in for <br> start messaging</h1>
+        
+        <form class="loginForm">
+            <fieldset class="loginInfo">
+
+            <label class="loginLabel"><h3 class="lgnHead">Email</h3><input type="email" name="email" placeholder="example@example.com"></label>
+            <label class="loginLabel"><h3 class="lgnHead">Password</h3><input type="password" name="password" placeholder="Minimum 6 symbols"></label>
+            <label class="loginLabel"><input class="loginBtn" type="button" value="Login" style="width:50%;"></label>
+            <h2 >Don't have an account? <br> </2><a class="signupBtn" href="">Sign up</a></h2>
+            
+            </fieldset>
+            
+        </form>
       </div>
 
 
@@ -62,18 +77,20 @@
             </datalist>
           </form> 
         <div class="contact-list">
+            
             </div>
         </div>
     </div>
     <!--html for chatting page -->
     <div class="chat">
-        <h1 class="contact-name"></h1>
+        <h1 class="contact-name">Contact name </h1>
         <div class="exitBtn"><button class="btn-exit"><span class="material-symbols-outlined">undo</span></button>
 </div>
         <div class="chatbox">
             <div class="sentMSG-div">
-                
-                
+                <!-- Temporary -->
+                <h3 style="margin-right: 5%; color:rgb(109, 4, 4); font-size:larger">Sent messages will appear here</h3>
+                <!-- Temporary -->
             </div>
         </div>
         <form class="textboard" id="board">

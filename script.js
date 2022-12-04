@@ -23,7 +23,7 @@ const undoBtn = document.querySelector(".btn-exit");
     }
 
     const contact5 = {
-        name: 'Lionel',
+        name: 'Lionel Messi',
         lastName: 'Messi',
         email: 'lionelMessi@gmail.com',
         password: 'messi123',
@@ -40,7 +40,7 @@ const undoBtn = document.querySelector(".btn-exit");
         name : 'Mikheil Margishvili'
     };
     const contact2 = {
-        name : 'Mr. Suliko Qumaritov'
+        name : 'Mustafa Kemal'
     };
     const contact1 = {
         name : 'Alim Akhchanogli'
@@ -215,32 +215,30 @@ const undoBtn = document.querySelector(".btn-exit");
       
 
        
-
+      //Before creating back end
       submit.addEventListener('click', function(e){
         e.preventDefault();
-        const user = {};
-        const userName = document.querySelector(".userName").value; 
-          const userLastname = document.querySelector(".userLastname").value;
-      const userEmail = document.querySelector(".email").value;
-      const userBirthDay = document.querySelector(".birthYear").value;
-      const userProfilePicture = document.querySelector('.picture').value;
-      const password = document.querySelector(".confirmPassword").value;
-        console.log(userName, userLastname, userEmail, userBirthDay, userProfilePicture, password);
-        user.name = userName;
-        user.lastName = userLastname;
-        user.email = userEmail;
-        user.birthday = userBirthDay;
-        user.profilePicture = userProfilePicture;
-        user.password = password;
-
-        console.log(addContact);
-        addContact.forEach(el => {
-          if(user.email != el.email){
-            addContact.push(user);
-            console.log(addContact);
-          }
-        })
-
       })
-      
+
+
+
+      //Code for Login page
+      const login = document.querySelector(".login");
+      const signup = document.querySelector('.sign');
+      const loginBtn = document.querySelector('.loginBtn');
+      const signupBtn = document.querySelector('.signupBtn');
+      console.log(loginBtn);
+      console.log(signupBtn);
+
+      signupBtn.addEventListener('click', function(e){
+        e.preventDefault()
+        login.style.visibility = "hidden";
+        signup.style.visibility = "visible";
+      });
+
+      loginBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        login.style.visibility = 'hidden';
+        firstPage.style.visibility = 'visible';
+      })
 

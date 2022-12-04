@@ -47,7 +47,6 @@ height: 30px;
     width: 200px;
 }
 
-
 .showHide{
 display: flex;
 margin-left: -23;
@@ -57,9 +56,46 @@ margin-left: -23;
 visibility: hidden;
 margin-left: -11px;
 }
+.sign{
+    visibility: hidden;
+}
+
+
+
+
+/* Styles for login page */
+.login > h1{
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10%;
+}
+.loginForm{
+    display: block;
+    margin: auto;
+    border-radius: var(--mainBorderRadius);
+    height: 75%;
+    width: 94%;
+    background-color: var(--mainTextColor);
+    text-align: center;
+}
+.loginInfo{
+    border:none ;
+    display: block;
+    margin-top: 10%;
+}
+.loginLabel{
+    font-weight: bold;
+    font-size: x-large;
+}
+.lgnHead{
+    margin-top: 5%;
+}
+
+
+
 
 /* Styles that matching for contact list and chat pages */
-.box, .chat, .sign{
+.box, .chat, .sign, .login{
     width:var(--viewWidth);
     height: var(--viewHeight);
     position: absolute;
@@ -227,8 +263,17 @@ text-align-last: left;
 
 
 .box{
-    visibility: hidden;
+    visibility: visible;
+    margin-left: 1000px;
 }
 .chat{
-visibility: hidden;
+visibility: visible;
+margin-left: 1500px;
+}
+.sign{
+    visibility: visible;
+    
+}
+.login{
+    margin-left: 500px;
 }
