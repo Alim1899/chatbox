@@ -193,18 +193,19 @@ const undoBtn = document.querySelector(".btn-exit");
         const password = document.querySelector('.password');
         if(pass.length>=6){
         if (pass == conPass) {
-          message.style.color = 'green';
-          message.innerHTML = 'matching';
+          
           confirm.style.border = '3px solid green';
           password.style.border = '3px solid green';
           submit.disabled = false;
         } else {
             confirm.style.border = '3px solid red';
           password.style.border = '3px solid red';
-          message.style.color = 'red';
-          message.innerHTML = 'not matching';
           submit.disabled = true;
         }
+      }else{
+        confirm.style.border = '3px solid red';
+          password.style.border = '3px solid red';
+          submit.disabled = true;
       }
       
       }
