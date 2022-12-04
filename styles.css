@@ -157,7 +157,7 @@ opacity: 0;
     width: 300px;
     font-size: larger;
     height: 50px;
-    background-color: var(--mainTextColor);
+    
     border: none;
 }
 
@@ -188,7 +188,7 @@ align-items: center;
 }
 
 .material-icons{
-    color: var(--mainTextColor);
+    color: white;
 }
 .material-icons:hover{
     cursor:pointer;
