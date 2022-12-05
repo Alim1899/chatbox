@@ -159,12 +159,21 @@ const undoBtn = document.querySelector(".btn-exit");
        //SHow/ hide passwords
        const showIcon = document.querySelector('.fa-eye');
        const password = document.querySelector('.password');
-       console.log(showIcon);
+      
        showIcon.addEventListener('click', function(){
-        showIcon.classList.remove('fa-eye')
-        showIcon.classList.add('fa-eye-slash');
-        password.type = 'text';
-        console.log(showIcon);
+            
+          if(showIcon.classList.toggle('fa-eye')){
+            showIcon.classList.add('fa-eye');
+            password.type='password';
+          }else{
+            showIcon.classList.add('fa-eye-slash');
+             password.type='text';
+          }
+           
+           
+        
+       
+        
        })
        
 
@@ -183,15 +192,18 @@ const undoBtn = document.querySelector(".btn-exit");
           confirm.style.border = '3px solid green';
           password.style.border = '3px solid green';
           submit.disabled = false;
+          submit.style.cursor = 'pointer';
         } else {
             confirm.style.border = '3px solid red';
           password.style.border = '3px solid red';
           submit.disabled = true;
+          submit.style.cursor = 'not-allowed';
         }
       }else if(pass.length<6 && pass.length>0){
         confirm.style.border = '3px solid red';
           password.style.border = '3px solid red';
           submit.disabled = true;
+          submit.style.cursor = 'not-allowed';
       }
       
       }
