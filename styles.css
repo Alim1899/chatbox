@@ -46,18 +46,20 @@ height: 30px;
 .profilePictureLabel>input{
     width: 200px;
 }
-
-.showHide{
-display: flex;
-margin-left: -23;
+.passwords{
+    width: 70%;
+    margin: 0 auto;
 }
 
-.hide{
-visibility: hidden;
-margin-left: -11px;
+.showPassIcon{
+    position: relative;
+    left: 180px;
+    bottom: 42px;
+    cursor: pointer;
 }
-.sign{
-    visibility: hidden;
+.submitBtn{
+    width: 200px;
+    height: 200px;
 }
 
 
@@ -187,12 +189,6 @@ align-items: center;
     color: #e43011;
 }
 
-.material-icons{
-    color: white;
-}
-.material-icons:hover{
-    cursor:pointer;
-}
 
 /* Styles for secong page - messaging with selected contact */
 .chat{
@@ -254,11 +250,7 @@ text-align-last: left;
 }
 
 
-.material-symbols-outlined{
-   border: none;
 
-   
-}
 
 
 

@@ -157,40 +157,26 @@ const undoBtn = document.querySelector(".btn-exit");
        
 
        //SHow/ hide passwords
-       eyeIcon.forEach(el => el.addEventListener("click", function(e){
-        const pass = document.querySelector('.password');
-        const conPass = document.querySelector('.confirmPassword')
-        const icon = document.querySelector('.hide');
-        const icon2 = document.querySelector('.show');
-        const margin = document.querySelector('.showHide');
-        
-        let eye = document.querySelector('.forToggle').textContent;
-        if(eye=='Show'){
-            document.querySelector(".forToggle").textContent='Hide'
-           icon.style.visibility='visible'
-           icon2.style.visibility='hidden'
-           icon2.style.marginLeft = '-25px';
-           let eye = document.querySelector('.forToggle').style.marginLeft='25px'
-           conPass.type = 'text';
-           pass.type = "text";
-        }else{ 
-          icon.style.visibility='hidden'
-          icon2.style.visibility='visible'
-          conPass.type = 'password';
-           pass.type = "password";
-           icon2.style.marginLeft = '0px';
-           let eye = document.querySelector('.forToggle').style.marginLeft='0px'
-            document.querySelector(".forToggle").textContent='Show'
-        }
-        console.log(eye);
-       }));
+       const showIcon = document.querySelector('.fa-eye');
+       const password = document.querySelector('.password');
+       console.log(showIcon);
+       showIcon.addEventListener('click', function(){
+        showIcon.classList.remove('fa-eye')
+        showIcon.classList.add('fa-eye-slash');
+        password.type = 'text';
+        console.log(showIcon);
+       })
        
+
           ///Check passwords matching or not
         const check = function() {
         const pass = document.querySelector('.password').value;
         const conPass = document.querySelector('.confirmPassword').value;
         const confirm = document.querySelector('.confirmPassword');
-        const password = document.querySelector('.password');
+       if(pass.length == 0){
+        confirm.style.border = 'none';
+          password.style.border = 'none';
+       }
         if(pass.length>=6){
         if (pass == conPass) {
           
@@ -202,7 +188,7 @@ const undoBtn = document.querySelector(".btn-exit");
           password.style.border = '3px solid red';
           submit.disabled = true;
         }
-      }else{
+      }else if(pass.length<6 && pass.length>0){
         confirm.style.border = '3px solid red';
           password.style.border = '3px solid red';
           submit.disabled = true;
@@ -227,8 +213,7 @@ const undoBtn = document.querySelector(".btn-exit");
       const signup = document.querySelector('.sign');
       const loginBtn = document.querySelector('.loginBtn');
       const signupBtn = document.querySelector('.signupBtn');
-      console.log(loginBtn);
-      console.log(signupBtn);
+      
 
       signupBtn.addEventListener('click', function(e){
         e.preventDefault()

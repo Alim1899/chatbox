@@ -2,16 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
     <title>chatbox</title>
 </head>
 <body>
-    <!-- html for ligin page -->
+    <!-- html for signup page -->
     <div class="sign">
         <h2 class="signupMsg" style="color:white;">Fill all fields for sign up</h2>
 
@@ -24,22 +26,20 @@
         <label class="emailLabel">E-mail<input class="email" type="email" placeholder="example@example.com" required pattern="/@./" ></label>
         <label class="profilePictureLabel">Profile picture<input class="picture" type="file" ></label>
         <label class="birthYearLabel">Birth date<input class="birthYear" type="date" ></label>
-
+        </fieldset>
+        <div class="passwords">
         <fieldset style="border:none;" class="passwordField">
-
-        <label class="passwordLabel">Password:<input  class="password" type="password" placeholder="Minimum 6 symbols" onkeyup="check()">
-            <div class="showHide">
-               <h5 class="showPass">
-                 <span class="material-symbols-outlined show eyeIcon">visibility_off</span>
-                <i class="material-symbols-outlined hide eyeIcon">visibility</i>
-                <h4 class="forToggle">Show</h4>
-            </h5>
-            </div>
+            
+                 <label class="passwordLabel">
+            Password:<input  class="password" type="password" placeholder="Minimum 6 symbols" onkeyup="check()">
+                <i class="fa-solid fa-eye showPassIcon"></i>
+                
         </label>
-        <label class="passwordConfirmLabel" style="font-weight: bold;"> Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></label>
-        </fieldset>
+        <label class="passwordConfirmLabel" style="font-weight: bold;"> Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></label>    
+         </fieldset>
+         </div> 
         <label class="submitLabel"><input class="submitBtn" value="Submit" type="submit"></label>  
-        </fieldset>
+       
     </form>
       </div>
 
