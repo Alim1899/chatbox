@@ -159,7 +159,9 @@ const undoBtn = document.querySelector(".btn-exit");
        //SHow/ hide passwords
        const showIcon = document.querySelector('.fa-eye');
        const password = document.querySelector('.password');
-      
+       const showIcon2 = document.querySelector('.showPass');
+       
+
        showIcon.addEventListener('click', function(){
             
           if(showIcon.classList.toggle('fa-eye')){
@@ -169,12 +171,20 @@ const undoBtn = document.querySelector(".btn-exit");
             showIcon.classList.add('fa-eye-slash');
              password.type='text';
           }
-           
-           
-        
-       
-        
        })
+
+       showIcon2.addEventListener('click', function(){
+            const pass = document.querySelector('.loginPassword');
+           
+        if(showIcon2.classList.toggle('fa-eye')){
+          showIcon2.classList.add('fa-eye');
+          pass.type='password';
+        }else{
+          showIcon2.classList.add('fa-eye-slash');
+           pass.type='text';
+        }
+     })
+       
        
 
           ///Check passwords matching or not
