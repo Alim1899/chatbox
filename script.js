@@ -161,6 +161,7 @@ const undoBtn = document.querySelector(".btn-exit");
        //SHow/ hide passwords
        const showIcon = document.querySelector('.fa-eye');
        const password = document.querySelector('.password');
+       const confirmPassword = document.querySelector('.confirmPassword');
        const showIcon2 = document.querySelector('.showPass');
        
 
@@ -169,9 +170,11 @@ const undoBtn = document.querySelector(".btn-exit");
           if(showIcon.classList.toggle('fa-eye')){
             showIcon.classList.add('fa-eye');
             password.type='password';
+            confirmPassword.type='password';
           }else{
             showIcon.classList.add('fa-eye-slash');
              password.type='text';
+             confirmPassword.type='text';
           }
        })
 

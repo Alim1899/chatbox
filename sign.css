@@ -3,7 +3,7 @@
     text-align: center;
 }
 .signup{
-    font-size: x-large;
+    font-size: 1.5rem;
     font-weight: 900;
     background-color: var(--mainTextColor);
     height: 90%;
@@ -28,15 +28,19 @@ border-radius: 15px;
 height: 30px;
 }
 .passwords{
-    width: 80%;
+    width: 100%;
     margin: 0 auto; 
 }
-.passwordConfirmLabel>input{
-position: absolute;
- display: block;
- width: 50%;
- left: 20%;
+.showPassIcon{
+position: relative;
+bottom: -7px;
 }
+.passwordConfirmLabel>input{
+position: relative;
+ display: block;
+ left: 3%;
+}
+
 
 .submitBtn{
     margin-top: 10%;
@@ -47,4 +51,27 @@ position: absolute;
    cursor: not-allowed;
    font-size: 1.5rem;
    border: none
+}
+
+/* Responsive */
+@media (min-width:445px) and (max-width:532px) {
+    .signup{
+        font-size: 1.8rem;
+        overflow: scroll;
+    }
+
+}
+@media (min-width:533px) and (max-width:1024px) {
+    
+    .sign-section{   
+        display: flex;
+        justify-content: center; 
+}
+.sign{
+    width: 500px;
+}
+.signup{
+    font-size: 1.8rem;
+    overflow: scroll;
+}
 }
