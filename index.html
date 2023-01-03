@@ -40,7 +40,7 @@
             </fieldset>
         <fieldset style="border:none;" class="detailFields">
         <label class="emailLabel">E-mail<input class="email" type="email" placeholder="example@example.com" required pattern="/@./" ></label>
-        <label class="profilePictureLabel">Profile picture<input class="picture" type="file" ></label>
+        <label class="profilePictureLabel">Profile picture<input class="picture" id="image" type="file" accept="image/jpeg, image/png, image/jpg" ></label>
         <label class="birthYearLabel">Birth date<input class="birthYear" type="date" ></label>
         </fieldset>
    
@@ -55,7 +55,8 @@
         <label class="passwordConfirmLabel" style="font-weight: bold;"> Confirm Password:<input class="confirmPassword" type="password" onkeyup="check()"></label>    
          </fieldset>
          </div> 
-        <label class="submitLabel"><input class="submitBtn" value="SIGN IN"  type="submit"></label>  
+        <label class="submitLabel"><input class="submitBtn" value="SIGN IN" type="submit"></label>  
+        
        
     </form>
       </div>

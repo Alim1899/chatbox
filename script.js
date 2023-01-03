@@ -157,7 +157,7 @@ const undoBtn = document.querySelector(".btn-exit");
        ];
 
        
-
+//////////////////////////////////////////////////
        //SHow/ hide passwords
        const showIcon = document.querySelector('.fa-eye');
        const password = document.querySelector('.password');
@@ -178,18 +178,18 @@ const undoBtn = document.querySelector(".btn-exit");
           }
        })
 
-       showIcon2.addEventListener('click', function(){
-            const pass = document.querySelector('.loginPassword');
+    //    showIcon2.addEventListener('click', function(){
+    //     const pass = document.querySelector('.loginPassword');
            
-        if(showIcon2.classList.toggle('fa-eye')){
-          showIcon2.classList.add('fa-eye');
-          pass.type='password';
-        }else{
-          showIcon2.classList.add('fa-eye-slash');
-           pass.type='text';
-        }
-     })
-       
+    //     if(showIcon2.classList.toggle('fa-eye')){
+    //       showIcon2.classList.add('fa-eye');
+    //       pass.type='password';
+    //     }else{
+    //       showIcon2.classList.add('fa-eye-slash');
+    //        pass.type='text';
+    //     }
+    //  })
+       ///////////////////////////////////////////////////
        
 
           ///Check passwords matching or not
@@ -221,17 +221,58 @@ const undoBtn = document.querySelector(".btn-exit");
           submit.style.cursor = 'not-allowed';
       }
       }
+/////////////////////////////////////////////////
+     
 
-   
-     
-     
+
+
+
+
+
+
+class User{
+  constructor(name, lastname, email, birthday, picture, password){
+    this.name = name;
+    this.lastName = lastname;
+    this.email = email;
+    this.birthday = birthday;
+    this.picture = picture;
+    this.password = password;
+  }
+};
       
+//Save data in localStorage
+//////////////////////////////////////////
+const getPic = function(){
+  const img = document.getElementById('img');
+  const image = document.getElementById('image');
+  
+  image.addEventListener('change',function(){
+    const reader = new FileReader()
+
+    reader.addEventListener("load", () => {
+      reader.result;
+    })
+  
+    reader.readAsDataURL(this.files[0])
+  })
+}
 
        
       //Before creating back end
       submit.addEventListener('click', function(e){
-        e.preventDefault();
-        
+         e.preventDefault();
+        const firstName =  document.querySelector('.userName').value;
+        const lastName = document.querySelector('.userLastname').value;
+       const email = document.querySelector('.email').value;
+       const birthday = document.querySelector('.birthYear').value;
+       const password = document.querySelector('.password').value;
+      window.localStorage.setItem('userName', firstName);
+      window.localStorage.setItem('lastName', lastName);
+      window.localStorage.setItem('email', email);
+      window.localStorage.setItem('birthday', birthday);
+      window.localStorage.setItem('password', password);
+      window.localStorage.setItem('profilePic',getPic());
       })
 
 

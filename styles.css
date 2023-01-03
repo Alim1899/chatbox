@@ -8,11 +8,6 @@
 }
 
 
-
-
-
-
-
 /* Styles that matching for contact list and chat pages */
 .box, .chat, .sign, .login{
     width:var(--viewWidth);
