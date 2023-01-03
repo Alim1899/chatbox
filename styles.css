@@ -1,115 +1,12 @@
 :root{
-    --viewWidth: 500px;
+    --viewWidth: 100%;
     --mainColor: #cd7ad8;
     --mainTextColor:#eed1f5;
-    --viewHeight: 700px;
+    --viewHeight: 800px;
     --mainBorderRadius: 50px;
     --mainFont:'Courier New', Courier, monospace;
 }
-.sign{
-    visibility: hidden;
-    display: block;
-    text-align: center;
-    
-}
-.signup{
-    font-size: x-large;
-    font-weight: 900;
-    background-color: var(--mainTextColor);
-    height: 90%;
-    width: 92%;
-    margin: auto;
-    border-radius: var(--mainBorderRadius);
-    overflow:auto;
-}
-form{
-    display: block;
-    justify-content:center;
-}
-fieldset>label>input:focus{
-    outline: none;
-    border: 3px solid #1a62ad;
-}
-.passwordField>label>input:focus{
-    border: none;
-}
 
-fieldset>label>input{
-    position: relative;
-display: block;
-margin: auto;
-width: 100%;
-margin-bottom: 20px;
-border: none;
-border-radius: 15px;
-height: 30px;
-}
-.profilePictureLabel{
-    width: 100px;
-}
-.profilePictureLabel>input{
-    width: 50%;
-    margin-top: 20px;
-
-}
-.passwords{
-    width: 80%;
-    margin: 0 auto;
-    
-}
-
-.showPassIcon{
-    position: relative;
-    left: 270px;
-    bottom: 48px;
-    cursor: pointer;
-}
-.showpass{
-    position: relative;
-    left:200px;
-    top: 27.2px;
-    z-index: 999;
-}
-.submitBtn{
-    width: 200px;
-   height: 50px;
-   margin-bottom: 40px;
-   border-radius: var(--mainBorderRadius);
-   cursor: not-allowed;
-   font-size: 1.5rem;
-   border: none
-}
-
-
-
-
-/* Styles for login page */
-.login{
-    visibility: visible;
-}
-.login > h1{
-    text-align: center;
-    color: aliceblue;
-    margin-top: 10%;
-}
-.loginForm{
-    display: block;
-    margin: auto;
-    border-radius: var(--mainBorderRadius);
-    height: 75%;
-    width: 94%;
-    background-color: var(--mainTextColor);
-    text-align: center;
-}
-.loginInfo{
-    border:none ;
-    display: block;
-    margin-top: 10%;
-}
-.loginLabel{
-    font-weight: bold;
-    font-size: x-large;
-}
 
 
 
@@ -205,14 +102,12 @@ align-items: center;
     font-weight: 700;
     color: #e43011;
 }
-.box{
-    visibility: hidden;
-}
+
 
 
 /* Styles for messaging page - messaging with selected contact */
 .chat{
-    visibility: hidden;
+    visibility: visible;
     display: block;
 }
 .chatbox{
@@ -267,6 +162,15 @@ text-align-last: left;
 }
 .messageArea{
     height: 28px;
-    
 }
 
+.sentMsg-p{
+    margin-right: 15%;
+    color:rgb(109, 4, 4);
+    font-size:larger;
+    max-width: 100%;
+}
+
+.hidden{
+    visibility: hidden;
+}

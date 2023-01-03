@@ -118,11 +118,13 @@ const undoBtn = document.querySelector(".btn-exit");
 
       const messageToChat = document.querySelector('.sentMsgToChat');
       
-      messageToChat.addEventListener('click', function(e){
+      messageToChat.addEventListener('click', function(){
+        const time = new Date()
         let message = document.querySelector('.messageArea').value;
+        let startMsg = document.querySelector('.sentMsg-p');
         const msgDiv = document.querySelector('.sentMSG-div');
-        console.log(message);
-        console.log(msgDiv);
+        console.log(time.getHours());
+        startMsg.remove();
         if(message.length>0){
             msgDiv.insertAdjacentHTML("afterbegin",`
             <p class="sentMsg-p">${message}</p>

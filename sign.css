@@ -1,0 +1,50 @@
+.sign{
+    display: block;
+    text-align: center;
+}
+.signup{
+    font-size: x-large;
+    font-weight: 900;
+    background-color: var(--mainTextColor);
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    border-radius: var(--mainBorderRadius);
+}
+fieldset>label>input:focus{
+    outline: none;
+    border: 3px solid #1a62ad;
+}
+.passwordField>label>input:focus{
+    border: none;
+}
+
+
+fieldset>label>input{
+width: 80%;
+margin-bottom: 20px;
+border: none;
+border-radius: 15px;
+height: 30px;
+}
+.passwords{
+    width: 80%;
+    margin: 0 auto; 
+}
+.passwordConfirmLabel>input{
+position: absolute;
+ display: block;
+ width: 50%;
+ left: 20%;
+}
+
+.submitBtn{
+    margin-top: 10%;
+    width: 200px;
+   height: 50px;
+   margin-bottom: 40px;
+   border-radius: var(--mainBorderRadius);
+   cursor: not-allowed;
+   font-size: 1.5rem;
+   border: none
+}

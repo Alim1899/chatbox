@@ -1,0 +1,25 @@
+
+/* Styles for login page */
+.login > h1{
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10%;
+}
+.loginForm{
+    display: block;
+    margin: auto;
+    border-radius: var(--mainBorderRadius);
+    height: 75%;
+    width: 94%;
+    background-color: var(--mainTextColor);
+    text-align: center;
+}
+.loginInfo{
+    border:none ;
+    display: block;
+    margin-top: 10%;
+}
+.loginLabel{
+    font-weight: bold;
+    font-size: x-large;
+}

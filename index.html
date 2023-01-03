@@ -2,6 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="login.css" type="text/css">
+    <link rel="stylesheet" href="sign.css" type="text/css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
@@ -13,16 +16,26 @@
     <title>chatbox</title>
 </head>
 <body>
+    <!-- ///////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- html for signup page -->
     <div class="sign">
-        <h2 class="signupMsg" style="color:white;">Fill all fields for sign up</h2>
-       
-
-        
+        <h2 class="signupMsg" style="color: #033333;">Fill all fields for sign up</h2>
         <form class="signup">
         <fieldset style="border:none;" class="signupDiv">
-                <label class="LastnameLabel">Name:<input class="userName" type="text" placeholder="@John" required></label>
-                <label class="lastnameLabel">Lastname:<input class="userLastname" type="text" placeholder="@Smith" required></label>
+                <label class="LastnameLabel">Name:<input class="userName" type="text" placeholder="e.g John" required></label>
+                <label class="lastnameLabel">Lastname:<input class="userLastname" type="text" placeholder="e.g Smith" required></label>
             </fieldset>
         <fieldset style="border:none;" class="detailFields">
         <label class="emailLabel">E-mail<input class="email" type="email" placeholder="example@example.com" required pattern="/@./" ></label>
@@ -46,9 +59,32 @@
     </form>
       </div>
 
+<!-- ///////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- HTML for login page -->
-      <div class="login">
+      <div class="login hidden">
         <h1>Log in for <br> start messaging</h1>
         
         <form class="loginForm">
@@ -67,8 +103,40 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- html for contact-list page -->
-    <div class="box">
+    <div class="box hidden">
         <h1 class="heading">Contact List</h1>
         <h5 class="errorMsg"></h5>
         <form id="form"> 
@@ -85,20 +153,20 @@
         </div>
     </div>
     <!--html for chatting page -->
-    <div class="chat">
+    <div class="chat hidden">
         <h1 class="contact-name">Contact name </h1>
         <div class="exitBtn"><button class="btn-exit"><span class="material-symbols-outlined">undo</span></button>
 </div>
         <div class="chatbox">
             <div class="sentMSG-div">
                 <!-- Temporary -->
-                <h3 style="margin-right: 5%; color:rgb(109, 4, 4); font-size:larger">Sent messages will appear here</h3>
+                <p class="sentMsg-p">Text message to start conversationmessage to start conversation </p>
                 <!-- Temporary -->
             </div>
         </div>
         <form class="textboard" id="board">
             <input class="messageArea">
-            <button type="button" class="sentMsgToChat" onclick="clearInput()"><span class="material-symbols-outlined messageSendBtn">
+            <button type="button" class="sentMsgToChat" ><span class="material-symbols-outlined messageSendBtn">
                 send
                 </span></button>
             </form>
