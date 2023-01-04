@@ -9,6 +9,7 @@
     text-align: center;
     color: aliceblue;
     margin-top: 10%;
+    margin: 2%;
 }
 .loginForm{
     display: block;
@@ -26,15 +27,18 @@
 }
 .loginPassword{
     position: relative;
-    left: 4.5%;
+    left: 6%;
+}
+.loginBtn{
+    margin-top: 15%;
+    font-size: large;
+    max-width: 200px;
+    
+    font-weight: 700;
 }
 .showLoginPass{
-    position: relative;
-    left: 2%;
-   
-
-    
-    
+    position: relative; 
+    right: 5%;   
 }
 .loginLabel{
     font-weight: bold;
@@ -44,6 +48,10 @@
     margin: 80px;
     text-align: center;
     color: antiquewhite;
+    border-top: 1px solid wheat;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 20px; 
 }
 .rights>a{
     color: #4b4629;

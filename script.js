@@ -234,23 +234,64 @@ const getPic = function(){
       window.localStorage.setItem('password', password);
       })
       
-
       //////////////////////////////////////////////////
 
+
+
+
+
+
+
+
+
+      //////////////////////////////////////////////////
 //Code for Login page
 
-const login = function(){
- 
+
+  const signupBtn = document.querySelector('.signupBtn');
+  const loginBtn = document.querySelector(".loginBtn");
+  const loginPass = document.querySelector('.loginPassword');
+
+
+  //Check password length
+const checkLogin = function(){
+  if(loginPass.value.length >=6) {
+    loginPass.style.border = '1px solid green';
+    loginBtn.disabled = false;
+    loginBtn.style.cursor = 'pointer';
+  }else{
+    loginPass.style.border = '1px solid red';
+  }
 }
 
-login();
 
 
- const signupBtn = document.querySelector('.signupBtn');
-signupBtn.addEventListener('click',function(){
-  document.querySelector('.sign-section').classList.remove('hidden');
-  document.querySelector('.login').classList.add('hidden');
+
+loginBtn.addEventListener('click', function(){
+  document.querySelector('.login-section').style.visibility = 'hidden';
+
 })
-      
+
+
+
+
+
+
+
+
+
+//From login to sign up page
+ signupBtn.addEventListener('click',function(){
+  document.querySelector('.login-section').style.visibility = 'hidden';
+  document.querySelector('.sign-section').style.visibility = 'visible';
+  
+})
+
+
+
+
+
+ 
+   
       
 

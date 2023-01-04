@@ -19,7 +19,7 @@
 }
 fieldset>label>input:focus{
     outline: none;
-    border: 3px solid #1a62ad;
+    border: none;
 }
 .passwordField>label>input:focus{
     border: none;
