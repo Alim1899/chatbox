@@ -75,3 +75,6 @@ position: relative;
     overflow: scroll;
 }
 }
+.sign-section{
+    visibility: hidden;
+}

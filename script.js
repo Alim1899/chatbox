@@ -163,8 +163,6 @@ const undoBtn = document.querySelector(".btn-exit");
        const password = document.querySelector('.password');
        const confirmPassword = document.querySelector('.confirmPassword');
        const showIcon2 = document.querySelector('.showPass');
-       
-
        showIcon.addEventListener('click', function(){
             
           if(showIcon.classList.toggle('fa-eye')){
@@ -178,45 +176,36 @@ const undoBtn = document.querySelector(".btn-exit");
           }
        })
 
-    //    showIcon2.addEventListener('click', function(){
-    //     const pass = document.querySelector('.loginPassword');
-           
-    //     if(showIcon2.classList.toggle('fa-eye')){
-    //       showIcon2.classList.add('fa-eye');
-    //       pass.type='password';
-    //     }else{
-    //       showIcon2.classList.add('fa-eye-slash');
-    //        pass.type='text';
-    //     }
-    //  })
+      
        ///////////////////////////////////////////////////
        
 
           ///Check passwords matching or not
-        const check = function() {
+        const check = function() {  
         const pass = document.querySelector('.password').value;
         const conPass = document.querySelector('.confirmPassword').value;
         const confirm = document.querySelector('.confirmPassword');
        if(pass.length == 0){
         confirm.style.border = 'none';
           password.style.border = 'none';
+          submit.disabled = true;
        }
         if(pass.length>=6){
         if (pass == conPass) {
           
-          confirm.style.border = '3px solid green';
-          password.style.border = '3px solid green';
+          confirm.style.border = '1px solid green';
+          password.style.border = '1px solid green';
           submit.disabled = false;
           submit.style.cursor = 'pointer';
         } else {
-            confirm.style.border = '3px solid red';
-          password.style.border = '3px solid red';
+            confirm.style.border = '1px solid red';
+          password.style.border = '1px solid red';
           submit.disabled = true;
           submit.style.cursor = 'not-allowed';
         }
       }else if(pass.length<6 && pass.length>0){
-        confirm.style.border = '3px solid red';
-          password.style.border = '3px solid red';
+        confirm.style.border = '1px solid red';
+          password.style.border = '1px solid red';
           submit.disabled = true;
           submit.style.cursor = 'not-allowed';
       }
@@ -224,25 +213,10 @@ const undoBtn = document.querySelector(".btn-exit");
 /////////////////////////////////////////////////
      
 
-
-
-
-
-
-
-class User{
-  constructor(name, lastname, email, birthday, picture, password){
-    this.name = name;
-    this.lastName = lastname;
-    this.email = email;
-    this.birthday = birthday;
-    this.picture = picture;
-    this.password = password;
-  }
-};
       
 //Save data in localStorage
 //////////////////////////////////////////
+//Get profile picture from input field
 const getPic = function(){
   const img = document.getElementById('img');
   const image = document.getElementById('image');
@@ -251,15 +225,14 @@ const getPic = function(){
     const reader = new FileReader()
 
     reader.addEventListener("load", () => {
-      reader.result;
+      //Must be changed
+      window.localStorage.setItem('profilePic',reader.result);
+      
     })
-  
     reader.readAsDataURL(this.files[0])
   })
 }
-
-       
-      //Before creating back end
+      //Before learning back end
       submit.addEventListener('click', function(e){
          e.preventDefault();
         const firstName =  document.querySelector('.userName').value;
@@ -272,8 +245,12 @@ const getPic = function(){
       window.localStorage.setItem('email', email);
       window.localStorage.setItem('birthday', birthday);
       window.localStorage.setItem('password', password);
-      window.localStorage.setItem('profilePic',getPic());
+      document.querySelector('.sign-section').style.visibility='hidden';
       })
+      
+
+      //////////////////////////////////////////////////
+
 
 
 
