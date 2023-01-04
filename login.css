@@ -1,5 +1,10 @@
 
 /* Styles for login page */
+.login-section{
+    display: flex;
+    justify-content: center;
+}
+
 .login > h1{
     text-align: center;
     color: aliceblue;
@@ -9,8 +14,8 @@
     display: block;
     margin: auto;
     border-radius: var(--mainBorderRadius);
-    height: 75%;
-    width: 94%;
+    height: 500px;
+    width: 95%;
     background-color: var(--mainTextColor);
     text-align: center;
 }
@@ -19,7 +24,27 @@
     display: block;
     margin-top: 10%;
 }
+.loginPassword{
+    position: relative;
+    left: 4.5%;
+}
+.showLoginPass{
+    position: relative;
+    left: 2%;
+   
+
+    
+    
+}
 .loginLabel{
     font-weight: bold;
     font-size: x-large;
+}
+.rights{
+    margin: 80px;
+    text-align: center;
+    color: antiquewhite;
+}
+.rights>a{
+    color: #4b4629;
 }

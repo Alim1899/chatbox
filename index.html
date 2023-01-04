@@ -30,7 +30,7 @@
 
 
     <!-- html for signup page -->
-    <div class="sign-section">
+    <div class="sign-section hidden">
 <div class="sign">
         <h2 class="signupMsg" style="color: white;">Fill all fields for sign up</h2>
         <form class="signup">
@@ -88,22 +88,30 @@
 
 
       <!-- HTML for login page -->
-      <div class="login">
-        <h1>Log in for <br> start messaging</h1>
-        
+      <div class="login-section">
+        <div class="login ">
+        <h1>Log in for  start messaging</h1>
         <form class="loginForm">
             <fieldset class="loginInfo">
 
-            <label class="loginLabel"><h3 class="lgnHead">Email</h3><input type="email" name="email" placeholder="example@example.com"></label>
-            <label class="loginLabel"><h3 style="margin-bottom:-1%;" class="lgnHead">Password</h3><i class="fa-solid fa-eye showPass"></i><input type="password" class="loginPassword" name="password" placeholder="Minimum 6 symbols"></label>
-            <label class="loginLabel"><input class="loginBtn" type="button" value="Login" style="width:50%; font-size: 1.5rem;"></label>
-            <h2 style="margin-top: 50px;">Don't have an account? <br> <a class="signupBtn" href="">Sign up</a></h2>
+            <label class="loginLabel">
+                <h3 class="lgnHead">Email</h3><input type="email" name="email" placeholder="example@example.com">
+            </label>
+            <label class="loginLabel">
+                <h3  class="lgnHead">Password</h3></i>
+                <input type="password" class="loginPassword" name="password" placeholder="Minimum 6 symbols">
+                <i class="fa-solid fa-eye showLoginPass"></i>
+            </label>
+            <label class="loginLabel"><input class="loginBtn" type="button" value="Login" ></label>
+            <h2>Don't have an account? <br> <a class="signupBtn" href="">Sign up</a></h2>
             
             </fieldset>
-            
         </form>
-      </div>
+        <h5 class="rights">Copyright by <a href='https://www.instagram.com/a__alim/'>Alim Akhchanogli</a></h5>
 
+      </div>
+      </div>
+      
 
 
 
@@ -176,5 +184,5 @@
             </form>
     </div>
 </body>
-<script src="script.js"></script>
+<script defer src="script.js"></script>
 </html>

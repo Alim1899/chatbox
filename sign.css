@@ -1,4 +1,10 @@
+.sign-section{   
+    display: flex;
+    justify-content: center; 
+    min-width: 350px;
+}
 .sign{
+    
     display: block;
     text-align: center;
 }
@@ -61,12 +67,8 @@ position: relative;
     }
 
 }
-@media (min-width:533px) and (max-width:1024px) {
+@media (min-width:533px) {
     
-    .sign-section{   
-        display: flex;
-        justify-content: center; 
-}
 .sign{
     width: 500px;
 }
@@ -74,7 +76,4 @@ position: relative;
     font-size: 1.8rem;
     overflow: scroll;
 }
-}
-.sign-section{
-    visibility: hidden;
 }

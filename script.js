@@ -138,27 +138,14 @@ const undoBtn = document.querySelector(".btn-exit");
 
 
 
-  //////////////////////////////////////////////////
-      //SIGNUP PAGE//
-      
-      
-       const submit = document.querySelector('.submitBtn');
-       const eyeIcon = document.querySelectorAll('.eyeIcon');
-       const passLabel = document.querySelector('.passwordlabel');
-       
-       //Array for storing new users
-       const addContact = [
-        //example user
-         {
-          name:'Alim',
-          lastName:'Akhchan',
-          email:'example@gmail.com',
-        }
-       ];
 
        
 //////////////////////////////////////////////////
+      //SIGNUP PAGE//
        //SHow/ hide passwords
+       const submit = document.querySelector('.submitBtn');
+       const eyeIcon = document.querySelectorAll('.eyeIcon');
+       const passLabel = document.querySelector('.passwordlabel');
        const showIcon = document.querySelector('.fa-eye');
        const password = document.querySelector('.password');
        const confirmPassword = document.querySelector('.confirmPassword');
@@ -245,31 +232,25 @@ const getPic = function(){
       window.localStorage.setItem('email', email);
       window.localStorage.setItem('birthday', birthday);
       window.localStorage.setItem('password', password);
-      document.querySelector('.sign-section').style.visibility='hidden';
       })
       
 
       //////////////////////////////////////////////////
 
+//Code for Login page
+
+const login = function(){
+ 
+}
+
+login();
 
 
-
-      //Code for Login page
-      const login = document.querySelector(".login");
-      const signup = document.querySelector('.sign');
-      const loginBtn = document.querySelector('.loginBtn');
-      const signupBtn = document.querySelector('.signupBtn');
+ const signupBtn = document.querySelector('.signupBtn');
+signupBtn.addEventListener('click',function(){
+  document.querySelector('.sign-section').classList.remove('hidden');
+  document.querySelector('.login').classList.add('hidden');
+})
       
-
-      signupBtn.addEventListener('click', function(e){
-        e.preventDefault()
-        login.style.visibility = "hidden";
-        signup.style.visibility = "visible";
-      });
-
-      loginBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        login.style.visibility = 'hidden';
-        firstPage.style.visibility = 'visible';
-      })
+      
 

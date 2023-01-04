@@ -10,8 +10,6 @@
 
 /* Styles that matching for contact list and chat pages */
 .box, .chat, .sign, .login{
-    width:var(--viewWidth);
-    height: var(--viewHeight);
     position: absolute;
     border-radius: var(--mainBorderRadius);
     background-color:var(--mainColor);
