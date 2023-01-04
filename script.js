@@ -274,21 +274,33 @@ loginBtn.addEventListener('click', function(e){
 const localPass = localStorage.getItem('password');
 if(loginPass.value==localPass && email.value==localEmail){
    document.querySelector('.login-section').style.visibility = 'hidden';
-   
+   alert("Succesfully logged in");
+   document.querySelector('.contact-list').style.visibility = 'visible'; 
 } else {
   if(email.value.length==0){
 alert("Please fill email field")
   }else{
     alert("Invalid email or password")
   }
-  
-
 }
-
- 
-
 })
 
+
+//Show/hide password in login page
+const showLoginPass = document.querySelector('.showLoginPass');
+const loginPassword = document.querySelector(".loginPassword");
+showLoginPass.addEventListener('click', function(){
+            
+  if(showLoginPass.classList.toggle('fa-eye')){
+    showLoginPass.classList.add('fa-eye');
+    loginPassword.type='password';
+    
+  }else{
+    showLoginPass.classList.add('fa-eye-slash');
+    loginPassword.type='text';
+     
+  }
+})
 //From login to sign up page
  signupBtn.addEventListener('click',function(e){
   e.preventDefault();
