@@ -232,6 +232,8 @@ const getPic = function(){
       window.localStorage.setItem('email', email);
       window.localStorage.setItem('birthday', birthday);
       window.localStorage.setItem('password', password);
+      document.querySelector('.login-section').style.visibility = 'visible';
+  document.querySelector('.sign-section').style.visibility = 'hidden';
       })
       
       //////////////////////////////////////////////////
@@ -264,24 +266,32 @@ const checkLogin = function(){
   }
 }
 
+//Check passwords is matching or not and then log in to contact list page
+loginBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  const email = document.querySelector('.loginEmail');
+    const localEmail = localStorage.getItem('email');
+const localPass = localStorage.getItem('password');
+if(loginPass.value==localPass && email.value==localEmail){
+   document.querySelector('.login-section').style.visibility = 'hidden';
+   
+} else {
+  if(email.value.length==0){
+alert("Please fill email field")
+  }else{
+    alert("Invalid email or password")
+  }
+  
 
+}
 
-
-loginBtn.addEventListener('click', function(){
-  document.querySelector('.login-section').style.visibility = 'hidden';
+ 
 
 })
 
-
-
-
-
-
-
-
-
 //From login to sign up page
- signupBtn.addEventListener('click',function(){
+ signupBtn.addEventListener('click',function(e){
+  e.preventDefault();
   document.querySelector('.login-section').style.visibility = 'hidden';
   document.querySelector('.sign-section').style.visibility = 'visible';
   

@@ -30,7 +30,7 @@
 
 
     <!-- html for signup page -->
-    <div class="sign-section ">
+    <div class="sign-section hidden" >
 <div class="sign">
         <h2 class="signupMsg" style="color: white;">Fill all fields for sign up</h2>
         <form class="signup">
@@ -56,33 +56,15 @@
          </fieldset>
          </div> 
         <label class="submitLabel"><input class="submitBtn"  value="SIGN IN" type="submit" disabled></label>  
-        <img id="img">
        
     </form>
+    <h4 class="rights-s" >Copyright by <a href='https://www.instagram.com/a__alim/'>Alim Akhchanogli</a></h4>
+
       </div>
     </div>
     
 
 <!-- ///////////////////////////////////////////////////////////////// -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -95,7 +77,7 @@
             <fieldset class="loginInfo">
 
             <label class="loginLabel">
-                <h3 class="lgnHead">Email</h3><input class="email" type="email" name="email" placeholder="example@example.com">
+                <h3 class="lgnHead">Email</h3><input class="loginEmail" pattern=".+@globex\.com" type="email" name="email" placeholder="example@example.com" required>
             </label>
             <label class="loginLabel">
                 <h3  class="lgnHead">Password</h3></i>
