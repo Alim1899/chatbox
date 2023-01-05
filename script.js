@@ -18,48 +18,38 @@ const startChat = document.querySelector('.sendBtn');
 const list2 = document.querySelectorAll('.name');
 const msgContact = document.querySelector('.contact-name');
 const undoBtn = document.querySelector(".btn-exit");
-    const contact6 = {
-        name: 'Harry Maguire'
+
+
+    class Contact  {
+      constructor(firstName, lastName, url){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.url = url;
+      }
     }
 
-    const contact5 = {
-        name: 'Lionel Messi',
-        lastName: 'Messi',
-        email: 'lionelMessi@gmail.com',
-        password: 'messi123',
-        birthday : {
-            day: '21',
-            month:'02',
-            year:'1998'
-        }
-    }
-    const contact4 = {
-        name: 'Jonas Schchmetdmann'
-    };
-    const contact3 = {
-        name : 'Mikheil Margishvili'
-    };
-    const contact2 = {
-        name : 'Mustafa Kemal'
-    };
-    const contact1 = {
-        name : 'Alim Akhchanogli'
-    };
-    const contacts = [contact1, contact2, contact3, contact4, contact5, contact6];
+
+    const lbj = new Contact('LeBron', 'James','https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LeBron_James_-_51959723161_%28cropped%29.jpg/800px-LeBron_James_-_51959723161_%28cropped%29.jpg');
+    const kd = new Contact('Kevin', 'Durant', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kevin_Durant_%28Wizards_v._Warriors%2C_1-24-2019%29_%28cropped%29.jpg/800px-Kevin_Durant_%28Wizards_v._Warriors%2C_1-24-2019%29_%28cropped%29.jpg');
+    const klaw = new Contact ('Kawhi', 'Leonard','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/1_kawhi_leonard_2019_%28cropped%29.jpg/800px-1_kawhi_leonard_2019_%28cropped%29.jpg');
+    const ad = new Contact('Anthony', 'Davis','https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_Davis_pre-game_%28cropped%29.jpg/800px-Anthony_Davis_pre-game_%28cropped%29.jpg');
+    const cp3 = new Contact('Chris', 'Paul','https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg/800px-Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg');
+    const contacts = [lbj, kd, ad, klaw, cp3];
           
     //Function for add suggestion from contact list to search-bar
     const addSuggs = function(arr){
         arr.forEach(el => suggs.insertAdjacentHTML('afterbegin', `
-        <button class="optBtn"><option class="optGroup">${el.name}</option></button>
+        <button class="optBtn"><option class="optGroup">${el.firstName} ${el.lastName}</option></button>
         `));
     }
     
 
         // Function for add contact names from array to interface
-    const addName = function(arr){
+      const addName = function(arr){
         arr.forEach(el => contactList.insertAdjacentHTML('afterbegin',`
         <div class='contact'>
-        <h2 class='name' id='name'>${el.name}</h2>
+        <img class='profilePicture' src='${el.url}'>
+        <h2 class='name' id='name'>${el.firstName} ${el.lastName}</h2>
         </div>
         `
         
@@ -99,7 +89,6 @@ const undoBtn = document.querySelector(".btn-exit");
 
     const lisst = document.querySelectorAll('.name');
     // Event listener for start messaging with selected contact from contact-list
-
     lisst.forEach(el => el.addEventListener('click', function (e){
          
         firstPage.style.visibility = 'hidden';
@@ -237,13 +226,6 @@ const getPic = function(){
       })
       
       //////////////////////////////////////////////////
-
-
-
-
-
-
-
 
 
       //////////////////////////////////////////////////

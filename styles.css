@@ -8,7 +8,7 @@
 }
 
 
-/* Styles that matching for contact list and chat pages */
+/* Styles that matching */
 .box, .chat, .sign, .login{
     position: absolute;
     border-radius: var(--mainBorderRadius);
@@ -16,85 +16,6 @@
     font-family:var(--mainFont);
 }
 
-/* Styles for first Page  - Contact list */
-.heading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
-    color:rgb(243, 247, 247);
-    font-size: 3rem;
-    font-family:var(--mainFont);
-    position:relative;
-}
-
-.contact-list{
-   
-    font-weight: 600;
-    width:100%;
-    height: 498px;
-    border-radius: var(--mainBorderRadius);
-    background-color: var(--mainTextColor);
-    display: block;
-    max-height: 80%;
-    overflow-y:scroll;
-}
-
-
-.errorMsg{
-text-align: center;
-color: #e43011;
-position: absolute;
-margin-left: 180px;
-margin-top: -35px;
-font-size: 1.5rem;
-opacity: 0;
-}
-
-
-::-webkit-scrollbar{
-    width: 0px;
-}
-
-#form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.search{
-    border-radius: 20px;
-    width: 300px;
-    font-size: larger;
-    height: 50px;
-    
-    border: none;
-}
-
-
-.contact{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid var(--mainColor);
-    border-radius: 20px;
-    height: 20%;
-    
-}
-.name{
-    width: 100%;
-    height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.endMsg{
-    font-size: 1.6rem;
-    display: flex;
-    justify-content: center;
-    text-decoration: underline;
-    font-weight: 700;
-    color: #e43011;
-}
 
 
 
