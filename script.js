@@ -43,16 +43,14 @@ const undoBtn = document.querySelector(".btn-exit");
         `));
     }
     
-
         // Function for add contact names from array to interface
       const addName = function(arr){
         arr.forEach(el => contactList.insertAdjacentHTML('afterbegin',`
         <div class='contact'>
-        <img class='profilePicture' src='${el.url}'>
+        <img class='profilePicture' src='${el.url}'/>
         <h2 class='name' id='name'>${el.firstName} ${el.lastName}</h2>
         </div>
         `
-        
          ));
          contactList.appendChild(endMessage);
     }
@@ -62,15 +60,13 @@ const undoBtn = document.querySelector(".btn-exit");
 
 
     ///Code for Chatting page
-    
 
     
     // Event listener for start messaging with selected contact from suggestion
     startChat.addEventListener('click', function (e){
       const chatName = document.querySelector('.search').value;
       const contArr =[];
-       contacts.forEach(el => contArr.push(el.name))
-      
+       contacts.forEach(el => contArr.push(el.firstName +' '+ el.lastName))
       if(contArr.includes(chatName)){
         firstPage.style.visibility = 'hidden';
         secondPage.style.visibility = 'visible';
@@ -79,9 +75,13 @@ const undoBtn = document.querySelector(".btn-exit");
       }else if(chatName.length>0){
         errorMessage.textContent = "Please select right contact"
             errorMessage.style.opacity = 1;
+            setTimeout(function() {
+              errorMessage.textContent = ""
+            errorMessage.style.opacity = 1;
+            },1000)
 
     }else{       
-        errorMessage.textContent = "Please wright contact name"
+        errorMessage.textContent = "Please wright contact name";
         errorMessage.style.visibility = 1;
       }
     })

@@ -3,7 +3,7 @@
 .login-section{
     display: flex;
     justify-content: center;
-    
+   
 }
 
 .login > h1{
@@ -43,20 +43,4 @@
     font-weight: bold;
     font-size: x-large;
 }
-.rights{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    color: antiquewhite;
-    border-top: 1px solid wheat;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 90px;
-    padding: 20px; 
-}
-.rights>a{
-    color: #4b4629;
-}
-.login{
-    height: 800px;
-}
+
