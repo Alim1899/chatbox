@@ -94,6 +94,8 @@ const undoBtn = document.querySelector(".btn-exit");
         firstPage.style.visibility = 'hidden';
         secondPage.style.visibility = 'visible';
           msgContact.textContent = e.target.textContent;
+          let startMsg = document.querySelector('.sentMsg-p');
+          startMsg.textContent = `Sent message  for start conversation with ${e.target.textContent}`
       }))
 
       undoBtn.addEventListener('click', function(e){
@@ -104,23 +106,46 @@ const undoBtn = document.querySelector(".btn-exit");
       function clearInput(id){
         document.getElementById(id).reset();
       }
-
-      const messageToChat = document.querySelector('.sentMsgToChat');
       
-      messageToChat.addEventListener('click', function(){
+      
+      
+      
+      
+      
+
+
+
+
+      
+       
+       //Adding sent messages in to interface
+      const messages = [];
+      const messageToChat = document.querySelector('.sentMsgToChat');
+      messageToChat.addEventListener('click', function(e){
+        e.preventDefault();
         const time = new Date()
         let message = document.querySelector('.messageArea').value;
         let startMsg = document.querySelector('.sentMsg-p');
-        const msgDiv = document.querySelector('.sentMSG-div');
-        console.log(time.getHours());
-        startMsg.remove();
+        const msgDiv = document.getElementById('msgList')
+       if(startMsg) startMsg.remove();
+       messages.push(message);
         if(message.length>0){
-            msgDiv.insertAdjacentHTML("afterbegin",`
-            <p class="sentMsg-p">${message}</p>
-            `);
-             clearInput("board")
+        const node = document.createElement('li');
+        node.classList.add('sentMessage');
+        const child = document.createTextNode(`${messages[messages.length-1]}`);
+        console.log(child);
+
+        console.log(messages[messages.length-1]);
+        
+        node.appendChild(child);
+          
+           messages.push(message);
+           msgDiv.appendChild(node);
+           
+            
+             clearInput("board");
         }else{
-            console.log(message);
+            
         }
       })
 

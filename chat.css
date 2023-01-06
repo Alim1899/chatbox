@@ -10,10 +10,12 @@
     border-radius: var(--mainBorderRadius);
     background-color: var(--mainTextColor);
    margin: auto;
+   overflow: scroll;
 }
 .contact-name{
     position: relative;
-    top: 2vw;
+    top: 20px;
+    height: 100px;
    margin: auto;
     width: 90%;
     text-align: center;
@@ -21,14 +23,24 @@
     font-size: 2rem;
 }
 .sentMSG-div{
-    display: flex;
-    justify-content: right;
-    align-items:flex-end;
-    border: 1px solid red;
+    display: block;
+    position: relative;
+   width: 70%;
+   margin-left: 25%;
+}
+.sentMSG-div>ul{
+    list-style-type: none;
+}
+#msgList{
+    text-align: right;
+    
 }
 .sentMsg-p{
+    
+    text-align: right;
     border-bottom: 1px solid var(--mainColor);
     border-radius: var(--mainBorderRadius);
+    
 }
 
 .btn-exit{
@@ -37,8 +49,8 @@
     color: white;
     font-size: x-large;
     position: absolute;
-    top: 2vw;
-    left: 3vw;
+    top: 20px;
+    left: 30px;
 }
 
 .textboard{
@@ -53,11 +65,4 @@
 }
 .messageArea{
     height: 28px;
-}
-
-.sentMsg-p{
-    margin-right: 15%;
-    color:rgb(109, 4, 4);
-    font-size:larger;
-    max-width: 100%;
 }
