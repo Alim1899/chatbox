@@ -1,0 +1,63 @@
+.chat-section{
+    display: flex;
+    justify-content: center;
+}
+
+.chatbox{
+    font-weight: 600;
+    width:94%;
+    height: 500px;
+    border-radius: var(--mainBorderRadius);
+    background-color: var(--mainTextColor);
+   margin: auto;
+}
+.contact-name{
+    position: relative;
+    top: 2vw;
+   margin: auto;
+    width: 90%;
+    text-align: center;
+    color:rgb(243, 247, 247);
+    font-size: 2rem;
+}
+.sentMSG-div{
+    display: flex;
+    justify-content: right;
+    align-items:flex-end;
+    border: 1px solid red;
+}
+.sentMsg-p{
+    border-bottom: 1px solid var(--mainColor);
+    border-radius: var(--mainBorderRadius);
+}
+
+.btn-exit{
+    background-color: var(--mainColor);
+    border: none;
+    color: white;
+    font-size: x-large;
+    position: absolute;
+    top: 2vw;
+    left: 3vw;
+}
+
+.textboard{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 10px;
+    background-color: #ccb0dd;
+
+}
+.messageArea{
+    height: 28px;
+}
+
+.sentMsg-p{
+    margin-right: 15%;
+    color:rgb(109, 4, 4);
+    font-size:larger;
+    max-width: 100%;
+}

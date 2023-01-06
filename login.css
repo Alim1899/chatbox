@@ -27,7 +27,7 @@
 }
 .loginPassword{
     position: relative;
-    left: 6%;
+    left: 3.5%;
 }
 .loginBtn{
     margin-top: 15%;
@@ -37,8 +37,9 @@
 }
 .showLoginPass{
     position: relative; 
-    right: 5%;   
-}
+    right: 7%;
+  
+   }
 .loginLabel{
     font-weight: bold;
     font-size: x-large;

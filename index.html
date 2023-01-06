@@ -4,8 +4,10 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
     <link rel="stylesheet" href="login.css" type="text/css">
     <link rel="stylesheet" href="sign.css" type="text/css">
+    <link rel="stylesheet" href="chat.css" type="text/css">
     <link rel="stylesheet" href="contactList.css" type="text/css">
 
+    <script defer src="https://kit.fontawesome.com/4d0d4da3d9.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
@@ -56,7 +58,7 @@
 <!-- ////////////////////////////////////////////////////////////// -->
 
       <!-- HTML for login page -->
-      <div class="login-section">
+      <div class="login-section hidden">
         <div class="login ">
         <h1>Log in for  start messaging</h1>
         <form class="loginForm">
@@ -71,8 +73,8 @@
             <label class="loginLabel">
                 <h3  class="lgnHead">Password</h3></i>
                 <input type="password" class="loginPassword" name="password" placeholder="Minimum 6 symbols" onkeyup="checkLogin()">
-                <i class="fa-solid fa-eye showLoginPass"></i>
-            </label>
+                
+            </label><i class="fa-solid fa-eye showLoginPass"></i>
             <label class="loginLabel"><input class="loginBtn" type="button" disabled value="Login"  ></label>
             <h2>Don't have an account? <br> <a class="signupBtn" href="">Sign up</a></h2>
             
@@ -120,26 +122,40 @@
 
 
     <!--html for chatting page -->
-    <div class="chat hidden">
+    <div class="chat-section">
+        <div class="chat">
         <h1 class="contact-name">Contact name </h1>
-        <div class="exitBtn"><button class="btn-exit"><span class="material-symbols-outlined">undo</span></button>
+        <div class="exitBtn"><button class="btn-exit">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
 </div>
         <div class="chatbox">
             <div class="sentMSG-div">
                 <!-- Temporary -->
-                <p class="sentMsg-p">Text message to start conversationmessage to start conversation </p>
+                <p class="sentMsg-p">Text message to start conversation</p>
                 <!-- Temporary -->
             </div>
         </div>
         <form class="textboard" id="board">
             <input class="messageArea">
-            <button type="button" class="sentMsgToChat" ><span class="material-symbols-outlined messageSendBtn">
+            <button type="button" class="sentMsgToChat" >
+                <span class="material-symbols-outlined messageSendBtn">
                 send
-                </span></button>
+                </span>
+            </button>
             </form>
             <h4 class="rights" >Copyright by <a href='https://www.instagram.com/a__alim/'>Alim Akhchanogli</a></h4>
-
     </div>
+    </div>
+    
+
+
+
+
+
+
+
+
 </body>
 <script defer src="script.js"></script>
 </html>
