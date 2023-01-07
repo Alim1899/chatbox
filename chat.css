@@ -23,7 +23,7 @@
     font-size: 2rem;
 }
 .sentMSG-div{
-    display: block;
+  display: block;
     position: relative;
    width: 70%;
    margin-left: 25%;
@@ -36,11 +36,21 @@
     
 }
 .sentMsg-p{
-    
     text-align: right;
-    border-bottom: 1px solid var(--mainColor);
-    border-radius: var(--mainBorderRadius);
     
+}
+.sentMessage{
+    overflow-wrap: break-word;
+
+}
+.sentMsgTime{
+    position: absolute;
+    margin: auto;
+   font-size: small;
+   visibility: hidden;
+}
+.sentMessage:hover .sentMsgTime{
+    visibility: visible;
 }
 
 .btn-exit{

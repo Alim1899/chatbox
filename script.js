@@ -123,24 +123,32 @@ const undoBtn = document.querySelector(".btn-exit");
       const messageToChat = document.querySelector('.sentMsgToChat');
       messageToChat.addEventListener('click', function(e){
         e.preventDefault();
-        const time = new Date()
+        const time = new Date();
         let message = document.querySelector('.messageArea').value;
         let startMsg = document.querySelector('.sentMsg-p');
         const msgDiv = document.getElementById('msgList')
        if(startMsg) startMsg.remove();
        messages.push(message);
         if(message.length>0){
-        const node = document.createElement('li');
+         const node = document.createElement('li');
         node.classList.add('sentMessage');
         const child = document.createTextNode(`${messages[messages.length-1]}`);
-        console.log(child);
-
-        console.log(messages[messages.length-1]);
         
+
+
+       
+        const timeNode = document.createElement('h6');
+        timeNode.classList.add('sentMsgTime');
+        const timeNodeChild = document.createTextNode(`${time.getHours()}:${time.getMinutes()}`)
+        timeNode.appendChild(timeNodeChild);
+        node.appendChild(timeNode)
         node.appendChild(child);
+        
+        messages.push(message);
+        console.log(msgDiv);
+        msgDiv.appendChild(node);
           
-           messages.push(message);
-           msgDiv.appendChild(node);
+           
            
             
              clearInput("board");
