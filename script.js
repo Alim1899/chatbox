@@ -94,6 +94,7 @@ const undoBtn = document.querySelector(".btn-exit");
         firstPage.style.visibility = 'hidden';
         secondPage.style.visibility = 'visible';
           msgContact.textContent = e.target.textContent;
+          console.log(e.target);
           let startMsg = document.querySelector('.sentMsg-p');
           startMsg.textContent = `Sent message  for start conversation with ${e.target.textContent}`
       }))
@@ -138,8 +139,9 @@ const undoBtn = document.querySelector(".btn-exit");
         timeNode.classList.add('sentMsgTime');
         const timeNodeChild = document.createTextNode(`${time.getHours()}:${time.getMinutes()}`)
         timeNode.appendChild(timeNodeChild);
-        node.appendChild(timeNode)
         node.appendChild(child);
+        node.appendChild(timeNode)
+        
         messages.push(message);
         console.log(msgDiv);
         msgDiv.appendChild(node);
@@ -152,8 +154,9 @@ const undoBtn = document.querySelector(".btn-exit");
         const recTimeNode = document.createElement('h6');
         recTimeNode.classList.add('recDate');
         recTimeNode.appendChild(recDate);
-        received.appendChild(receivedMessage);
         received.appendChild(recTimeNode);
+        received.appendChild(receivedMessage);
+        
         
         
         
