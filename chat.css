@@ -40,7 +40,7 @@
 }
 .recMsg{
     position: relative;
-    left: -53%;
+    left: -54%;
     text-align: left;
     display: flex;
     justify-content: center;
@@ -58,19 +58,20 @@
     justify-content: end;
     align-items: center;
     overflow-wrap: break-word;
-    margin-right: 5px;
+    margin-right: 15px;
    
 }
 .recDate{
-    visibility: hidden;
-    padding-right: 4px;
+    /* visibility: hidden; */
+    padding-right: 7px;
   
 }
 .sentMsgTime{
    position: absolute;
    margin: auto;
-   left: 99%;
-   visibility: hidden;
+   left: 97%;
+   text-align: center;
+   /* visibility: hidden; */
    
 }
 .sentMessage:hover .sentMsgTime{

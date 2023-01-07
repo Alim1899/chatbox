@@ -137,7 +137,7 @@ const undoBtn = document.querySelector(".btn-exit");
         const child = document.createTextNode(`${messages[messages.length-1]}`);
         const timeNode = document.createElement('h6');
         timeNode.classList.add('sentMsgTime');
-        const timeNodeChild = document.createTextNode(`${time.getHours()}:${time.getMinutes()}`)
+        const timeNodeChild = document.createTextNode(`${time.getHours()<10?'0'+time.getHours():time.getHours()}:${time.getMinutes()}`)
         timeNode.appendChild(timeNodeChild);
         node.appendChild(child);
         node.appendChild(timeNode)
@@ -150,7 +150,7 @@ const undoBtn = document.querySelector(".btn-exit");
         const received = document.createElement('li');
         received.classList.add('recMsg');
         const receivedMessage = document.createTextNode('This is an received message example');
-        const recDate = document.createTextNode(`${time.getHours()}:${time.getMinutes()}`);
+        const recDate = document.createTextNode(`${time.getHours()<10?'0'+time.getHours():time.getHours()}:${time.getMinutes()<10?'0'+time.getMinutes():time.getMinutes()}`);
         const recTimeNode = document.createElement('h6');
         recTimeNode.classList.add('recDate');
         recTimeNode.appendChild(recDate);
