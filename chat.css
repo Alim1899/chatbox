@@ -33,15 +33,30 @@
 }
 #msgList{
     text-align: right;
-    
+}
+.recMsg{
+    position: relative;
+    left: -50%;
+    text-align: left;
 }
 .sentMsg-p{
-    text-align: right;
+    text-align: center;
+    margin-top: 100px;
+   margin-left:-25%;
+    font-size: xx-large;
     
 }
 .sentMessage{
     overflow-wrap: break-word;
 
+}
+.recDate{
+    position: absolute;
+    margin: auto;
+    left: 90%;
+    top: 2px;
+   font-size: small;
+   visibility: hidden;
 }
 .sentMsgTime{
     position: absolute;
@@ -51,6 +66,11 @@
 }
 .sentMessage:hover .sentMsgTime{
     visibility: visible;
+    color: green;
+}
+.recMsg:hover .recDate{
+    visibility: visible;
+    color:chocolate;
 }
 
 .btn-exit{

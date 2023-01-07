@@ -130,23 +130,34 @@ const undoBtn = document.querySelector(".btn-exit");
        if(startMsg) startMsg.remove();
        messages.push(message);
         if(message.length>0){
+
          const node = document.createElement('li');
         node.classList.add('sentMessage');
         const child = document.createTextNode(`${messages[messages.length-1]}`);
-        
-
-
-       
         const timeNode = document.createElement('h6');
         timeNode.classList.add('sentMsgTime');
         const timeNodeChild = document.createTextNode(`${time.getHours()}:${time.getMinutes()}`)
         timeNode.appendChild(timeNodeChild);
         node.appendChild(timeNode)
         node.appendChild(child);
-        
         messages.push(message);
         console.log(msgDiv);
         msgDiv.appendChild(node);
+        
+        //Received message
+        const received = document.createElement('li');
+        received.classList.add('recMsg');
+        const receivedMessage = document.createTextNode('This is an received message example');
+        const recDate = document.createTextNode(`${time.getHours()}:${time.getMinutes()}`);
+        const recTimeNode = document.createElement('h6');
+        recTimeNode.classList.add('recDate');
+        recTimeNode.appendChild(recDate);
+        received.appendChild(receivedMessage);
+        received.appendChild(recTimeNode);
+        
+        
+        
+        msgDiv.appendChild(received)
           
            
            
