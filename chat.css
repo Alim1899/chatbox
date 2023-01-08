@@ -62,7 +62,7 @@
    
 }
 .recDate{
-    /* visibility: hidden; */
+    visibility: hidden;
     padding-right: 7px;
   
 }
@@ -71,7 +71,7 @@
    margin: auto;
    left: 97%;
    text-align: center;
-   /* visibility: hidden; */
+   visibility: hidden;
    
 }
 .sentMessage:hover .sentMsgTime{
@@ -105,4 +105,9 @@
 }
 .messageArea{
     height: 28px;
+}
+
+.prof{
+    width: 200px;
+    border-radius: 50px;
 }

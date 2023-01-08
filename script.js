@@ -90,13 +90,20 @@ const undoBtn = document.querySelector(".btn-exit");
     const lisst = document.querySelectorAll('.name');
     // Event listener for start messaging with selected contact from contact-list
     lisst.forEach(el => el.addEventListener('click', function (e){
-         
+    
         firstPage.style.visibility = 'hidden';
         secondPage.style.visibility = 'visible';
           msgContact.textContent = e.target.textContent;
-          console.log(e.target);
+          
           let startMsg = document.querySelector('.sentMsg-p');
+
           startMsg.textContent = `Sent message  for start conversation with ${e.target.textContent}`
+          const img = document.createElement('img');
+          img.src = e.target.parentNode.firstChild.nextElementSibling.currentSrc;
+         startMsg.appendChild(img)
+         img.classList.add('prof');
+         
+          
       }))
 
       undoBtn.addEventListener('click', function(e){
@@ -143,7 +150,6 @@ const undoBtn = document.querySelector(".btn-exit");
         node.appendChild(timeNode)
         
         messages.push(message);
-        console.log(msgDiv);
         msgDiv.appendChild(node);
         
         //Received message
@@ -170,10 +176,6 @@ const undoBtn = document.querySelector(".btn-exit");
             
         }
       })
-
-
-
-
 
        
 //////////////////////////////////////////////////
