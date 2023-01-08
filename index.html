@@ -22,40 +22,25 @@
     <!-- ///////////////////////////////////////////////////////////////// -->
 
     <!-- html for signup page -->
-    <div class="sign-section" >
+    <div class="sign-section hidden">
 <div class="sign">
         <h2 class="signupMsg" style="color: white;">Fill all fields for sign up</h2>
         <form class="signup">
         <fieldset style="border:none;" class="signupDiv">
                 <label class="LastnameLabel">Name:<input class="userName" type="text" placeholder="e.g John" required></label>
-                <label class="lastnameLabel">Lastname:<input class="userLastname" type="text" placeholder="e.g Smith" required></label>
+                <label class="lastnameLabel">
+                    Lastname:<input class="userLastname" type="text" placeholder="e.g Smith" required>
+                </label>
             </fieldset>
         <fieldset style="border:none;" class="detailFields">
-        <label class="emailLabel">E-mail<input class="email" type="email" placeholder="example@example.com" required pattern="/@./" ></label>
-
-
-
-
-
-
-
-        
-
+        <label class="emailLabel">
+            E-mail<input class="email" type="email" placeholder="example@example.com" required >
+        </label>
         <label
          class="profilePictureLabel">Profile picture
          <input
-          class="picture" id="image" type="file" accept="image/jpeg, image/png, image/jpg" >
-        </label>
-       
-       
-
-
-
-
-
-       
-       
-       
+          class="picture" id="image" type="file" accept="image/jpeg, image/png, image/jpg" required>
+        </label>        
         <label class="birthYearLabel">Birth date<input class="birthYear" type="date" ></label>
         </fieldset>
    
@@ -81,7 +66,7 @@
 <!-- ////////////////////////////////////////////////////////////// -->
 
       <!-- HTML for login page -->
-      <div class="login-section hidden">
+      <div class="login-section">
         <div class="login ">
         <h1>Log in for  start messaging</h1>
         <form class="loginForm">
@@ -112,7 +97,7 @@
       <!-- /////////////////////////////////////////////////////////////// -->
 
     <!-- html for contact-list page -->
-    <div class="list-section">
+    <div class="list-section hidden">
     <div class="box">
         <h1 class="heading">Contact List</h1>
         <h5 class="errorMsg"></h5>

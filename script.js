@@ -265,6 +265,10 @@ const undoBtn = document.querySelector(".btn-exit");
     }else{       
         errorMessage.textContent = "Please wright contact name";
         errorMessage.style.visibility = 1;
+        setTimeout(function() {
+          errorMessage.textContent = ""
+        errorMessage.style.opacity = 1;
+        },1000)
       }
     })
       
