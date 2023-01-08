@@ -59,7 +59,6 @@
     align-items: center;
     overflow-wrap: break-word;
     margin-right: 15px;
-   
 }
 .recDate{
     visibility: hidden;
@@ -94,17 +93,15 @@
 }
 
 .textboard{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 25%;
-    margin-top: 10px;
-    background-color: #ccb0dd;
-
+    margin-top: 15px;
+    
 }
 .messageArea{
     height: 28px;
+    width: 300px;
 }
 
 .prof{

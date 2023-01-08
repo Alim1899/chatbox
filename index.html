@@ -22,7 +22,7 @@
     <!-- ///////////////////////////////////////////////////////////////// -->
 
     <!-- html for signup page -->
-    <div class="sign-section hidden" >
+    <div class="sign-section" >
 <div class="sign">
         <h2 class="signupMsg" style="color: white;">Fill all fields for sign up</h2>
         <form class="signup">
@@ -32,7 +32,30 @@
             </fieldset>
         <fieldset style="border:none;" class="detailFields">
         <label class="emailLabel">E-mail<input class="email" type="email" placeholder="example@example.com" required pattern="/@./" ></label>
-        <label class="profilePictureLabel">Profile picture<input class="picture" id="image" type="file" accept="image/jpeg, image/png, image/jpg" ></label>
+
+
+
+
+
+
+
+        
+
+        <label
+         class="profilePictureLabel">Profile picture
+         <input
+          class="picture" id="image" type="file" accept="image/jpeg, image/png, image/jpg" >
+        </label>
+       
+       
+
+
+
+
+
+       
+       
+       
         <label class="birthYearLabel">Birth date<input class="birthYear" type="date" ></label>
         </fieldset>
    
@@ -89,7 +112,7 @@
       <!-- /////////////////////////////////////////////////////////////// -->
 
     <!-- html for contact-list page -->
-    <div class="list-section ">
+    <div class="list-section">
     <div class="box">
         <h1 class="heading">Contact List</h1>
         <h5 class="errorMsg"></h5>
@@ -141,6 +164,7 @@
               
             </div>
         </div>
+        
         <form class="textboard" id="board" onsubmit="return false">
             <input class="messageArea">
             <button type="button" class="sentMsgToChat">
