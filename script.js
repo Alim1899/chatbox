@@ -117,6 +117,24 @@ let id =0;
        const email = document.querySelector('.email').value;
        const birthday = document.querySelector('.birthYear').value;
        const password = document.querySelector('.password').value;
+       //Check name field is filled or not
+        if(firstName.length<2){
+          alert("Please fill name field") ;
+        return;
+      }
+        //Check lastname field is filled or not
+
+        if(lastName.length<2){
+          alert("Please fill lastname field"); 
+          return;
+      }
+        //Check email field is filled or not
+       if(!document.querySelector('.email').checkValidity())
+       {
+        alert("Please enter a valid email address");
+      return;
+    }
+
        class User{
         constructor(firstName,lastName,email,password){
           this.firstName = firstName,
@@ -138,8 +156,8 @@ let id =0;
         return user;
       }
       const rt = checkUser();
-      console.log(rt);
-      console.log(localStorage);
+      // console.log(rt);
+      // console.log(localStorage);
 
 
 
