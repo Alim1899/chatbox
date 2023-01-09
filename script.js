@@ -126,9 +126,6 @@ let id =0;
         }
        }
        const newUser = new User(firstName,lastName,email,password,birthday);
-       console.log(newUser);
-       console.log(JSON.stringify(newUser));
-
 
       window.localStorage.setItem(`user-${id}`, JSON.stringify(newUser))
       id++;
@@ -137,11 +134,12 @@ let id =0;
       })
 
       const checkUser = function(){
-        const user = JSON.parse(localStorage.getItem('userInfo'))
+        const user = JSON.parse(localStorage.getItem(`user-${id}`))
         return user;
       }
       const rt = checkUser();
       console.log(rt);
+      console.log(localStorage);
 
 
 
@@ -202,8 +200,7 @@ let id =0;
        const ad = new Contact('Anthony', 'Davis','https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_Davis_pre-game_%28cropped%29.jpg/800px-Anthony_Davis_pre-game_%28cropped%29.jpg');
        const cp3 = new Contact('Chris', 'Paul','https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg/800px-Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg');
        const contacts = [lbj, kd, ad, klaw, cp3];
-         const newUser = new Contact(localStorage.getItem('userName'),localStorage.getItem('lastName'),localStorage.getItem('profilePicture'));
-       contacts.push(newUser);      
+        //  const neUser = new Contact(localStorage.getItem('userName'),localStorage.getItem('lastName'),localStorage.getItem('profilePicture'));
 
        //Function for add suggestion from contact list to search-bar
 
