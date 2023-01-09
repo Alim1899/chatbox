@@ -94,7 +94,7 @@ const undoBtn = document.querySelector(".btn-exit");
       
 //Save data in localStorage
 //////////////////////////////////////////
-let id =0;
+
   const image = document.querySelector('.picture');
       image.addEventListener('change',(e)=>{
     const img = e.target.files[0];
@@ -109,7 +109,7 @@ let id =0;
       
      
       //Before learning back end - Saving data in to localStorage
-      
+      let id = Math.random().toString(36).substr(2, 9);
       submit.addEventListener('click', function(e){
          e.preventDefault();
         const firstName =  document.querySelector('.userName').value;
@@ -135,18 +135,21 @@ let id =0;
       return;
     }
 
+
+
        class User{
-        constructor(firstName,lastName,email,password){
+        constructor(firstName,lastName,email,password,id){
           this.firstName = firstName,
       this.lastName = lastName,
       this.email = email,
       this.password = password
+      this.id = 0
         }
        }
-       const newUser = new User(firstName,lastName,email,password,birthday);
+       const newUser = new User(firstName,lastName,email,password,id);
 
-      window.localStorage.setItem(`user-${id}`, JSON.stringify(newUser))
-      id++;
+      window.localStorage.setItem(`user-${id}`, JSON.stringify(newUser));
+      this.id++;
       document.querySelector('.login-section').style.visibility = 'visible';
   document.querySelector('.sign-section').style.visibility = 'hidden';
       })
@@ -155,9 +158,9 @@ let id =0;
         const user = JSON.parse(localStorage.getItem(`user-${id}`))
         return user;
       }
-      const rt = checkUser();
-      // console.log(rt);
-      // console.log(localStorage);
+      
+      const users = localStorage;
+       console.log(Object.entries(users));
 
 
 
