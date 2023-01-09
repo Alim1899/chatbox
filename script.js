@@ -94,7 +94,7 @@ const undoBtn = document.querySelector(".btn-exit");
       
 //Save data in localStorage
 //////////////////////////////////////////
-
+let id =0;
   const image = document.querySelector('.picture');
       image.addEventListener('change',(e)=>{
     const img = e.target.files[0];
@@ -107,8 +107,9 @@ const undoBtn = document.querySelector(".btn-exit");
       });
     })
       
-
+     
       //Before learning back end - Saving data in to localStorage
+      
       submit.addEventListener('click', function(e){
          e.preventDefault();
         const firstName =  document.querySelector('.userName').value;
@@ -116,15 +117,35 @@ const undoBtn = document.querySelector(".btn-exit");
        const email = document.querySelector('.email').value;
        const birthday = document.querySelector('.birthYear').value;
        const password = document.querySelector('.password').value;
+       class User{
+        constructor(firstName,lastName,email,password){
+          this.firstName = firstName,
+      this.lastName = lastName,
+      this.email = email,
+      this.password = password
+        }
+       }
+       const newUser = new User(firstName,lastName,email,password,birthday);
+       console.log(newUser);
+       console.log(JSON.stringify(newUser));
 
-      window.localStorage.setItem('userName', firstName);
-      window.localStorage.setItem('lastName', lastName);
-      window.localStorage.setItem('email', email);
-      window.localStorage.setItem('birthday', birthday);
-      window.localStorage.setItem('password', password);
+
+      window.localStorage.setItem(`user-${id}`, JSON.stringify(newUser))
+      id++;
       document.querySelector('.login-section').style.visibility = 'visible';
   document.querySelector('.sign-section').style.visibility = 'hidden';
       })
+
+      const checkUser = function(){
+        const user = JSON.parse(localStorage.getItem('userInfo'))
+        return user;
+      }
+      const rt = checkUser();
+      console.log(rt);
+
+
+
+
        //Adding sent messages in to interface
        const messages = [];
        const messageToChat = document.querySelector('.sentMsgToChat');
