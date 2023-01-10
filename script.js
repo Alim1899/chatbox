@@ -135,6 +135,7 @@ const undoBtn = document.querySelector(".btn-exit");
       return;
     }
 
+
        class User{
         constructor(firstName,lastName,email,password){
           this.firstName = firstName,
@@ -143,7 +144,7 @@ const undoBtn = document.querySelector(".btn-exit");
       this.password = password
         }
        }
-       const newUser = new User(firstName,lastName,email,password,id);
+       const newUser = new User(firstName,lastName,email,password);
        
       window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
       this.id++;
@@ -211,9 +212,16 @@ const undoBtn = document.querySelector(".btn-exit");
         const ad = new Contact('Anthony', 'Davis','https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_Davis_pre-game_%28cropped%29.jpg/800px-Anthony_Davis_pre-game_%28cropped%29.jpg');
         const cp3 = new Contact('Chris', 'Paul','https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg/800px-Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg');
         const contacts = [lbj, kd, ad, klaw, cp3];
-       
-       
-        //  const neUser = new Contact(localStorage.getItem('userName'),localStorage.getItem('lastName'),localStorage.getItem('profilePicture'));
+       const renderAccounts = function(){
+        const accounts = Object.entries(localStorage);
+        accounts.forEach((el)=>{
+          const newCont = new Contact(JSON.parse(el[1]).firstName,JSON.parse(el[1]).lastName)
+          contacts.push(newCont)
+        });
+        
+       }
+       renderAccounts();
+  
 
        //Function for add suggestion from contact list to search-bar
 
@@ -226,13 +234,28 @@ const undoBtn = document.querySelector(".btn-exit");
        
            // Function for add contact names from array to interface
          const addName = function(arr){
-           arr.forEach(el => contactList.insertAdjacentHTML('afterbegin',`
+          const randomImgUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8lCCz3naP8eDnFr476DeuRV8FvxmratoD6q-yuxjKsMu-0DQCKMzH5PeTAk6qB7UyxmE&usqp=CAU';
+           arr.forEach(el => {
+            if(!el.url){
+              contactList.insertAdjacentHTML('afterbegin',`
+           <div class='contact'>
+           <img class='profilePicture' src='${randomImgUrl}'/>
+           <h2 class='name' id='name'>${el.firstName} ${el.lastName}</h2>
+           </div>
+           `
+            )
+            }else{
+              contactList.insertAdjacentHTML('afterbegin',`
            <div class='contact'>
            <img class='profilePicture' src='${el.url}'/>
            <h2 class='name' id='name'>${el.firstName} ${el.lastName}</h2>
            </div>
            `
-            ));
+            )
+            }
+            
+          console.log(el);}
+            );
             contactList.appendChild(endMessage);
        }
            //Calling functions
@@ -307,13 +330,12 @@ const undoBtn = document.querySelector(".btn-exit");
 
 
       //////////////////////////////////////////////////
-//Code for Login page
 
+//Code for Login page
 
   const signupBtn = document.querySelector('.signupBtn');
   const loginBtn = document.querySelector(".loginBtn");
   const loginPass = document.querySelector('.loginPassword');
-
 
   //Check password length
 const checkLogin = function(){
@@ -326,8 +348,7 @@ const checkLogin = function(){
   }
 }
 
-
-//Retrieve data from localStorage
+//Retrieve data from localStorage  for login
 const localUser = Object.entries(localStorage);
 const arr = [];
 localUser.forEach((el,i)=>arr.push(JSON.parse(el[1])));
@@ -352,8 +373,6 @@ return;
     }else{
       document.querySelector('.list-section').style.visibility = 'visible';
       document.querySelector('.login-section').style.visibility = 'hidden';
-
-      
     }
     
   
