@@ -113,8 +113,8 @@ const undoBtn = document.querySelector(".btn-exit");
       submit.addEventListener('click', function(e){
          e.preventDefault();
         const firstName =  document.querySelector('.userName').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
-        const lastName = document.querySelector('.userLastname').value.split(/\s+/).map( s => s.toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
-       const email = document.querySelector('.email').value.split(/\s+/).map( s => s.toUpperCase());
+        const lastName = document.querySelector('.userLastname').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
+       const email = document.querySelector('.email').value.split(/\s+/).map( s => s.toLowerCase()).join('');
        const birthday = document.querySelector('.birthYear').value;
        const password = document.querySelector('.password').value;
        //Check name field is filled or not
@@ -332,12 +332,14 @@ const checkLogin = function(){
 
 
 
-const localUser = Object.entries(localStorage)
-localUser.forEach(el=>console.log(el))
-console.log(localUser);
+const localUser = Object.entries(localStorage);
+const arr = [];
+localUser.forEach((el,i)=>arr.push(JSON.parse(el[1])));
+console.log(arr);
+arr.forEach(el => console.log(el))
 
 const login = function(){
-  const email = document.querySelector('.loginEmail');
+  const email = document.querySelector('.loginEmail').split(/\s+/).map( s => s.toLowerCase()).join('');;
   const localEmail = localStorage.getItem('email');
   const localPass = localStorage.getItem('password');
   if(loginPass.value==localPass && email.value==localEmail){
