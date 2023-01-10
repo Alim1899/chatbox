@@ -107,15 +107,14 @@ const undoBtn = document.querySelector(".btn-exit");
       });
     })
       
-     
       //Before learning back end - Saving data in to localStorage
       let id = Math.random().toString(36).substr(2, 9);
 
       submit.addEventListener('click', function(e){
          e.preventDefault();
-        const firstName =  document.querySelector('.userName').value;
-        const lastName = document.querySelector('.userLastname').value;
-       const email = document.querySelector('.email').value;
+        const firstName =  document.querySelector('.userName').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
+        const lastName = document.querySelector('.userLastname').value.split(/\s+/).map( s => s.toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
+       const email = document.querySelector('.email').value.split(/\s+/).map( s => s.toUpperCase());
        const birthday = document.querySelector('.birthYear').value;
        const password = document.querySelector('.password').value;
        //Check name field is filled or not
@@ -146,8 +145,6 @@ const undoBtn = document.querySelector(".btn-exit");
        }
        const newUser = new User(firstName,lastName,email,password,id);
        
-
-
       window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
       this.id++;
       document.querySelector('.login-section').style.visibility = 'visible';
@@ -155,11 +152,6 @@ const undoBtn = document.querySelector(".btn-exit");
 
   
       })
-
-     
-       
-
-
 
 
        //Adding sent messages in to interface
@@ -212,12 +204,15 @@ const undoBtn = document.querySelector(".btn-exit");
              
          }
        })
-       const lbj = new Contact('LeBron', 'James','https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LeBron_James_-_51959723161_%28cropped%29.jpg/800px-LeBron_James_-_51959723161_%28cropped%29.jpg');
-       const kd = new Contact('Kevin', 'Durant', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kevin_Durant_%28Wizards_v._Warriors%2C_1-24-2019%29_%28cropped%29.jpg/800px-Kevin_Durant_%28Wizards_v._Warriors%2C_1-24-2019%29_%28cropped%29.jpg');
-       const klaw = new Contact ('Kawhi', 'Leonard','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/1_kawhi_leonard_2019_%28cropped%29.jpg/800px-1_kawhi_leonard_2019_%28cropped%29.jpg');
-       const ad = new Contact('Anthony', 'Davis','https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_Davis_pre-game_%28cropped%29.jpg/800px-Anthony_Davis_pre-game_%28cropped%29.jpg');
-       const cp3 = new Contact('Chris', 'Paul','https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg/800px-Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg');
-       const contacts = [lbj, kd, ad, klaw, cp3];
+      
+        const lbj = new Contact('LeBron', 'James','https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LeBron_James_-_51959723161_%28cropped%29.jpg/800px-LeBron_James_-_51959723161_%28cropped%29.jpg');
+        const kd = new Contact('Kevin', 'Durant', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kevin_Durant_%28Wizards_v._Warriors%2C_1-24-2019%29_%28cropped%29.jpg/800px-Kevin_Durant_%28Wizards_v._Warriors%2C_1-24-2019%29_%28cropped%29.jpg');
+        const klaw = new Contact ('Kawhi', 'Leonard','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/1_kawhi_leonard_2019_%28cropped%29.jpg/800px-1_kawhi_leonard_2019_%28cropped%29.jpg');
+        const ad = new Contact('Anthony', 'Davis','https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_Davis_pre-game_%28cropped%29.jpg/800px-Anthony_Davis_pre-game_%28cropped%29.jpg');
+        const cp3 = new Contact('Chris', 'Paul','https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg/800px-Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg');
+        const contacts = [lbj, kd, ad, klaw, cp3];
+       
+       
         //  const neUser = new Contact(localStorage.getItem('userName'),localStorage.getItem('lastName'),localStorage.getItem('profilePicture'));
 
        //Function for add suggestion from contact list to search-bar
@@ -333,6 +328,14 @@ const checkLogin = function(){
 
 //Check passwords is matching or not and then log in to contact list page
 
+
+
+
+
+const localUser = Object.entries(localStorage)
+localUser.forEach(el=>console.log(el))
+console.log(localUser);
+
 const login = function(){
   const email = document.querySelector('.loginEmail');
   const localEmail = localStorage.getItem('email');
@@ -353,6 +356,19 @@ loginBtn.addEventListener('click',function(e){
  e.preventDefault();
   login();
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Show/hide password in login page
