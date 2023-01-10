@@ -326,34 +326,40 @@ const checkLogin = function(){
   }
 }
 
-//Check passwords is matching or not and then log in to contact list page
 
-
-
-
-
+//Retrieve data from localStorage
 const localUser = Object.entries(localStorage);
 const arr = [];
 localUser.forEach((el,i)=>arr.push(JSON.parse(el[1])));
-console.log(arr);
-arr.forEach(el => console.log(el))
+const results = [];
 
 const login = function(){
-  const email = document.querySelector('.loginEmail').split(/\s+/).map( s => s.toLowerCase()).join('');;
-  const localEmail = localStorage.getItem('email');
-  const localPass = localStorage.getItem('password');
-  if(loginPass.value==localPass && email.value==localEmail){
-    document.querySelector('.login-section').style.visibility = 'hidden';
-    
-    document.querySelector('.list-section').style.visibility = 'visible'; 
-} else {
-  if(email.value.length==0){
-    alert("Please fill email field")
-  }else{
-    alert("Invalid email or password")
+  if(!document.querySelector('#loginMail').checkValidity()){
+alert('Please enter a valid email address');
+return;
   }
+ 
+  const email = document.querySelector('.loginEmail').value.split(/\s+/).map( s => s.toLowerCase()).join('');
+  const password = document.querySelector('.loginPassword').value;
+  arr.map(function(el) {
+    if(el.email===email && el.password===password) {
+      results.push(email);
+      results.push(password);
+  }
+    })
+    if(results.length!==2){
+      alert('Please enter correct account details');
+    }else{
+      document.querySelector('.list-section').style.visibility = 'visible';
+      document.querySelector('.login-section').style.visibility = 'hidden';
+
+      
+    }
+    
+  
 }
-}
+
+
 loginBtn.addEventListener('click',function(e){
  e.preventDefault();
   login();
