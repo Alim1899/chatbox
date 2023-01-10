@@ -120,18 +120,9 @@ const getImageUrl = function() {
           })
       
       //Before learning back end - Saving data in to localStorage
-      let id = Math.random().toString(36).substr(2, 9);
-
       submit.addEventListener('click', function(e){
-         e.preventDefault();
          
-         
-          
-        
-
-       
-
-
+  
         const firstName =  document.querySelector('.userName').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
         const lastName = document.querySelector('.userLastname').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
        const email = document.querySelector('.email').value.split(/\s+/).map( s => s.toLowerCase()).join('');
@@ -173,8 +164,8 @@ const getImageUrl = function() {
       window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
       this.id++;
       document.querySelector('.login-section').style.visibility = 'visible';
-  document.querySelector('.sign-section').style.visibility = 'hidden';
-
+      document.querySelector('.sign-section').style.visibility = 'hidden';
+      document.querySelector('.login-section').reload();
   
       })
 
@@ -239,7 +230,7 @@ const getImageUrl = function() {
         const renderAccounts = function(){
         const accounts = Object.entries(localStorage);
         accounts.forEach((el)=>{
-          const newCont = new Contact(JSON.parse(el[1]).firstName,JSON.parse(el[1]).lastName)
+          const newCont = new Contact(JSON.parse(el[1]).firstName,JSON.parse(el[1]).lastName,JSON.parse(el[1]).url)
           contacts.push(newCont)
         });
         
@@ -398,6 +389,8 @@ return;
       document.querySelector('.list-section').style.visibility = 'visible';
       document.querySelector('.login-section').style.visibility = 'hidden';
     }  
+
+
   
 }
 
