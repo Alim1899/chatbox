@@ -3,7 +3,7 @@
 .login-section{
     display: flex;
     justify-content: center;
-   
+  
 }
 
 .login > h1{
@@ -19,6 +19,7 @@
     width: 95%;
     background-color: var(--mainTextColor);
     text-align: center;
+    
 }
 .loginInfo{
     border:none ;

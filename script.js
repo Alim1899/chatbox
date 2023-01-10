@@ -110,6 +110,7 @@ const undoBtn = document.querySelector(".btn-exit");
      
       //Before learning back end - Saving data in to localStorage
       let id = Math.random().toString(36).substr(2, 9);
+
       submit.addEventListener('click', function(e){
          e.preventDefault();
         const firstName =  document.querySelector('.userName').value;
@@ -135,32 +136,28 @@ const undoBtn = document.querySelector(".btn-exit");
       return;
     }
 
-
-
        class User{
-        constructor(firstName,lastName,email,password,id){
+        constructor(firstName,lastName,email,password){
           this.firstName = firstName,
       this.lastName = lastName,
       this.email = email,
       this.password = password
-      this.id = 0
         }
        }
        const newUser = new User(firstName,lastName,email,password,id);
+       
 
-      window.localStorage.setItem(`user-${id}`, JSON.stringify(newUser));
+
+      window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
       this.id++;
       document.querySelector('.login-section').style.visibility = 'visible';
   document.querySelector('.sign-section').style.visibility = 'hidden';
+
+  
       })
 
-      const checkUser = function(){
-        const user = JSON.parse(localStorage.getItem(`user-${id}`))
-        return user;
-      }
-      
-      const users = localStorage;
-       console.log(Object.entries(users));
+     
+       
 
 
 
