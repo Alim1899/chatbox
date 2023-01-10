@@ -94,24 +94,44 @@ const undoBtn = document.querySelector(".btn-exit");
       
 //Save data in localStorage
 //////////////////////////////////////////
-
+const getImageUrl = function() {
   const image = document.querySelector('.picture');
-      image.addEventListener('change',(e)=>{
+  image.addEventListener('change',(e)=>{
     const img = e.target.files[0];
-    
     const reader = new FileReader();
     reader.readAsDataURL(img);
-    
     reader.addEventListener('load', () => {
-      localStorage.setItem('profilePicture', reader.result);
+      console.log(reader.result);
+      return reader.result;
       });
     })
+  };
+    
+  let url;
+  const image = document.querySelector('.picture');
+  const urlArr = [];
+     image.addEventListener('change',(e)=>{
+            const img = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(img);
+            reader.addEventListener('load', () => {             
+              urlArr.push(reader.result) 
+          })
+          })
       
       //Before learning back end - Saving data in to localStorage
       let id = Math.random().toString(36).substr(2, 9);
 
       submit.addEventListener('click', function(e){
          e.preventDefault();
+         
+         
+          
+        
+
+       
+
+
         const firstName =  document.querySelector('.userName').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
         const lastName = document.querySelector('.userLastname').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
        const email = document.querySelector('.email').value.split(/\s+/).map( s => s.toLowerCase()).join('');
@@ -136,16 +156,20 @@ const undoBtn = document.querySelector(".btn-exit");
     }
 
 
+
+
        class User{
-        constructor(firstName,lastName,email,password){
+        constructor(firstName,lastName,email,password,url){
           this.firstName = firstName,
       this.lastName = lastName,
       this.email = email,
-      this.password = password
+      this.password = password,
+      this.url = urlArr[0]
         }
+        
        }
-       const newUser = new User(firstName,lastName,email,password);
-       
+       const newUser = new User(firstName,lastName,email,password,urlArr[0]);
+       console.log(newUser);
       window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
       this.id++;
       document.querySelector('.login-section').style.visibility = 'visible';
@@ -212,7 +236,7 @@ const undoBtn = document.querySelector(".btn-exit");
         const ad = new Contact('Anthony', 'Davis','https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Anthony_Davis_pre-game_%28cropped%29.jpg/800px-Anthony_Davis_pre-game_%28cropped%29.jpg');
         const cp3 = new Contact('Chris', 'Paul','https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg/800px-Chris_Paul_%282022_All-Star_Weekend%29_%28cropped%29.jpg');
         const contacts = [lbj, kd, ad, klaw, cp3];
-       const renderAccounts = function(){
+        const renderAccounts = function(){
         const accounts = Object.entries(localStorage);
         accounts.forEach((el)=>{
           const newCont = new Contact(JSON.parse(el[1]).firstName,JSON.parse(el[1]).lastName)
@@ -254,7 +278,7 @@ const undoBtn = document.querySelector(".btn-exit");
             )
             }
             
-          console.log(el);}
+          }
             );
             contactList.appendChild(endMessage);
        }
@@ -373,8 +397,7 @@ return;
     }else{
       document.querySelector('.list-section').style.visibility = 'visible';
       document.querySelector('.login-section').style.visibility = 'hidden';
-    }
-    
+    }  
   
 }
 
@@ -383,18 +406,6 @@ loginBtn.addEventListener('click',function(e){
  e.preventDefault();
   login();
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
