@@ -50,10 +50,12 @@
         <div class="passwords">
         <fieldset style="border:none;" class="passwordField">
             
-                 <label class="passwordLabel">
-            Password:<input style="text-transform:lowercase;" maxlength="10" class="password" type="password" placeholder="Minimum 6 symbols" onkeyup="check()">
-                <i class="fa-solid fa-eye showPassIcon"></i>
-                
+                 <label class="passwordLabel">Password:
+                    <div class="passDiv">
+ <input style="text-transform:lowercase;" maxlength="10" class="passwordSign" type="password" placeholder="Min:6-max:10 symbols" onkeyup="check()">  
+                    <i class="fa-solid showHide fa-eye"></i>
+                    </div>
+                    
         </label>
         <label class="passwordConfirmLabel" style="font-weight: bold;"> Confirm Password:
             <input style="text-transform:lowercase;" maxlength="10" class="confirmPassword" type="password" onkeyup="check()">
@@ -70,7 +72,7 @@
 <!-- ////////////////////////////////////////////////////////////// -->
 
       <!-- HTML for login page -->
-      <div class="login-section">
+      <div class="login-section hidden">
         <div class="login ">
         <h1>Log in for  start messaging</h1>
         <form class="loginForm">

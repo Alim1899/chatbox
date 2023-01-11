@@ -25,25 +25,26 @@ fieldset>label>input:focus{
 }
 
 
-fieldset>label>input{
+fieldset>label>input, fieldset>label>div>input{
 width: 80%;
 margin-bottom: 20px;
 border: none;
 border-radius: 15px;
 height: 30px;
 }
+
 .passwords{
     width: 100%;
     margin: 0 auto; 
 }
-.showPassIcon{
-position: relative;
-bottom: -7px;
+.passDiv{
+    position: relative;
 }
-.passwordConfirmLabel>input{
-position: relative;
- display: block;
- left: 3%;
+.showHide{
+    position: absolute;
+    left: 80%;
+    font-size:smaller;
+top: 5.5px;
 }
 
 
@@ -59,24 +60,20 @@ position: relative;
 }
 
 /* Responsive */
-@media (min-width:445px) and (max-width:532px) {
+@media (min-width:445px)  {
     .signup{
         font-size: 1.8rem;
         overflow: scroll;
         height: 600px;
     }
+    .showHide{
+        position: absolute;
+        left: 80%;
+        font-size:smaller;
+    top: 2px;
+    }
     
 
 }
-@media (min-width:533px) {
-    
-.sign{
-    width: 500px;
-}
-.signup{
-    font-size: 1.8rem;
-    overflow: scroll;
-    height: 600px;
-}
-}
+
 

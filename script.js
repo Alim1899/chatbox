@@ -160,7 +160,7 @@ const getImageUrl = function() {
         
        }
        const newUser = new User(firstName,lastName,email,password,urlArr[0]);
-       console.log(newUser);
+     
       window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
       this.id++;
       document.querySelector('.login-section').style.visibility = 'visible';
@@ -389,9 +389,6 @@ return;
       document.querySelector('.list-section').style.visibility = 'visible';
       document.querySelector('.login-section').style.visibility = 'hidden';
     }  
-
-
-  
 }
 
 
@@ -399,7 +396,6 @@ loginBtn.addEventListener('click',function(e){
  e.preventDefault();
   login();
 })
-
 
 
 //Show/hide password in login page
@@ -430,14 +426,5 @@ fileSize.addEventListener("change",function(e){
   if((fileSize.files[0].size/1000)>500) {
     alert("Maximum image size is 500KB")
   fileSize.value = '';
-}
-  
+} 
 })
-
-
-
-
- 
-   
-      
-
