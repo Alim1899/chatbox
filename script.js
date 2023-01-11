@@ -210,7 +210,7 @@ const getImageUrl = function() {
          
          
          
-         msgDiv.appendChild(received)
+         msgDiv.appendChild(received);
            
             
             
