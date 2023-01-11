@@ -20,10 +20,12 @@
     max-height: 80%;
     overflow-y:scroll;
 }
-.sendBtn{
+.sendBtn, .logout{
     position: relative;
-    left:5px;
-    color:aliceblue
+    font-size: larger;
+    margin: 10px;
+    color:aliceblue;
+    cursor: pointer;
 }
 
 .errorMsg{
@@ -63,7 +65,7 @@ color: #ff0000;
     height: 20%;
 }
 .contact:hover{
-    opacity: 0.5;
+    opacity: 0.8;
 }
 .name{
     width: 100%;
@@ -85,15 +87,17 @@ cursor:pointer;
 .profilePicture{
     position: relative;
     left: 20px;
-    width: 100px;
-    height: 80px;
+    min-width: 90px;
+    max-width: 90px;
+    min-height: 80px;
+    max-height: 80px;
     border-radius: 50px;
     object-fit:fill;
 }
 .profilePicture:hover{
     zoom: 200%;
-    position: absolute;
     border-radius: 50px;
+    opacity: 1;
 }
 .contact> .name{
     position: relative;

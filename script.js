@@ -38,7 +38,7 @@ const undoBtn = document.querySelector(".btn-exit");
        const eyeIcon = document.querySelectorAll('.eyeIcon');
        const passLabel = document.querySelector('.passwordlabel');
        const showIcon = document.querySelector('.fa-eye');
-       const password = document.querySelector('.password');
+       const password = document.querySelector('.passwordSign');
        const confirmPassword = document.querySelector('.confirmPassword');
        const showIcon2 = document.querySelector('.showPass');
        showIcon.addEventListener('click', function(){
@@ -60,7 +60,7 @@ const undoBtn = document.querySelector(".btn-exit");
 
           ///Check passwords matching or not
         const check = function() {  
-        const pass = document.querySelector('.password').value;
+        const pass = document.querySelector('.passwordSign').value;
         const conPass = document.querySelector('.confirmPassword').value;
         const confirm = document.querySelector('.confirmPassword');
        if(pass.length == 0){
@@ -127,7 +127,7 @@ const getImageUrl = function() {
         const lastName = document.querySelector('.userLastname').value.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
        const email = document.querySelector('.email').value.split(/\s+/).map( s => s.toLowerCase()).join('');
        const birthday = document.querySelector('.birthYear').value;
-       const password = document.querySelector('.password').value;
+       const password = document.querySelector('.passwordSign').value;
        //Check name field is filled or not
         if(firstName.length<2){
           alert("Please fill name field") ;
@@ -162,7 +162,7 @@ const getImageUrl = function() {
        const newUser = new User(firstName,lastName,email,password,urlArr[0]);
      
       window.localStorage.setItem(`${email}`, JSON.stringify(newUser));
-      this.id++;
+      
       document.querySelector('.login-section').style.visibility = 'visible';
       document.querySelector('.sign-section').style.visibility = 'hidden';
       document.querySelector('.login-section').reload();
@@ -199,7 +199,7 @@ const getImageUrl = function() {
          //Received message
          const received = document.createElement('li');
          received.classList.add('recMsg');
-         const receivedMessage = document.createTextNode('This is an received message example');
+         const receivedMessage = document.createTextNode('You received this message automatically');
          const recDate = document.createTextNode(`${time.getHours()<10?'0'+time.getHours():time.getHours()}:${time.getMinutes()<10?'0'+time.getMinutes():time.getMinutes()}`);
          const recTimeNode = document.createElement('h6');
          recTimeNode.classList.add('recDate');
@@ -303,7 +303,16 @@ const getImageUrl = function() {
       undoBtn.addEventListener('click', function(e){
         firstPage.style.visibility = 'visible';
         secondPage.style.visibility = 'hidden';
+        firstPage.classList.remove('hidden');
+        secondPage.classList.add('hidden'); 
       })
+      
+      //Adding eventListenerto log out button
+       const logout = document.querySelector('.logout');
+       logout.addEventListener('click',function(){
+        firstPage.style.visibility = 'hidden';
+
+       })
       //Clear input field after sending message
       function clearInput(id){
         document.getElementById(id).reset();
@@ -428,3 +437,4 @@ fileSize.addEventListener("change",function(e){
   fileSize.value = '';
 } 
 })
+
