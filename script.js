@@ -212,9 +212,6 @@ const getImageUrl = function() {
          
          msgDiv.appendChild(received);
            
-            
-            
-             
               clearInput("board");
          }else{
              
@@ -311,7 +308,8 @@ const getImageUrl = function() {
        const logout = document.querySelector('.logout');
        logout.addEventListener('click',function(){
         firstPage.style.visibility = 'hidden';
-
+        document.querySelector('.login-section').style.visibility = 'visible';
+        document.querySelector('.loginPassword').value='';
        })
       //Clear input field after sending message
       function clearInput(id){
@@ -376,7 +374,7 @@ const checkLogin = function(){
 const localUser = Object.entries(localStorage);
 const arr = [];
 localUser.forEach((el,i)=>arr.push(JSON.parse(el[1])));
-const results = [];
+let results = [];
 
 const login = function(){
   if(!document.querySelector('#loginMail').checkValidity()){
@@ -390,13 +388,20 @@ return;
     if(el.email===email && el.password===password) {
       results.push(email);
       results.push(password);
+      console.log(results);
   }
     })
+
     if(results.length!==2){
       alert('Please enter correct account details');
     }else{
+      document.querySelector('.list-section').classList.remove('hidden');
+      console.log(document.querySelector('.list-section'));
       document.querySelector('.list-section').style.visibility = 'visible';
+      document.querySelector('.box').style.visibility = 'visible';
       document.querySelector('.login-section').style.visibility = 'hidden';
+      document.querySelector('.sign-section').style.visibility = 'hidden';
+      results = [];
     }  
 }
 
@@ -433,7 +438,7 @@ showLoginPass.addEventListener('click', function(){
 const fileSize = document.querySelector('#image');
 fileSize.addEventListener("change",function(e){
   if((fileSize.files[0].size/1000)>500) {
-    alert("Maximum image size is 500KB")
+    alert("Maximum size of image: 500KB")
   fileSize.value = '';
 } 
 })
