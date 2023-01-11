@@ -425,6 +425,14 @@ showLoginPass.addEventListener('click', function(){
   
 })
 
+const fileSize = document.querySelector('#image');
+fileSize.addEventListener("change",function(e){
+  if((fileSize.files[0].size/1000)>500) {
+    alert("Maximum image size is 500KB")
+  fileSize.value = '';
+}
+  
+})
 
 
 
