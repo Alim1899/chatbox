@@ -1,6 +1,9 @@
 .sign-section{   
     display: flex;
     justify-content: center; 
+    transition: 1s;
+    animation: ease-in-out;
+    animation-duration: 1s;
 }
 .sign{
     display: block;

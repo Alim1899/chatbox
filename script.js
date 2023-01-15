@@ -147,7 +147,7 @@ const getImageUrl = function() {
     }
 
 
-
+     
 
        class User{
         constructor(firstName,lastName,email,password,url){
@@ -230,7 +230,6 @@ const getImageUrl = function() {
           const newCont = new Contact(JSON.parse(el[1]).firstName,JSON.parse(el[1]).lastName,JSON.parse(el[1]).url)
           contacts.push(newCont)
         });
-        
        }
        renderAccounts();
   

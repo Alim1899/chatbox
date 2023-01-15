@@ -5,6 +5,7 @@
     --viewHeight: 800px;
     --mainBorderRadius: 50px;
     --mainFont:'Courier New', Courier, monospace;
+   
 }
 
 
@@ -16,6 +17,7 @@
     border-radius: var(--mainBorderRadius);
     background-color:var(--mainColor);
     font-family:var(--mainFont);
+    transition: 0.3s;
 }
 
 .rights{
